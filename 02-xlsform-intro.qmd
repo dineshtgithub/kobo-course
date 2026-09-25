@@ -1,0 +1,81 @@
+---
+title: "Module 2: Introduction to XLSForm"
+---
+
+An **XLSForm** is a normal Excel file (`.xlsx`) written in a special format. KoboToolbox reads it and turns it into a digital form. The rules are the same for KoboToolbox, ODK and other tools, so what you learn here is reusable.
+
+An XLSForm has **three sheets**. The sheet names must be written exactly like this, in lowercase.
+
+::: {.panel-tabset}
+
+## survey
+
+One **row per question**. The most important columns:
+
+| Column | Meaning |
+|:--|:--|
+| `type` | Question type (`integer`, `select_one sex`, `note` …) |
+| `name` | Short variable name used in the dataset. Unique, no spaces, starts with a letter (e.g. `age`, `marital_status`) |
+| `label` | The question text the respondent sees |
+| `hint` | Extra instruction shown under the question |
+| `required` | `yes` if the question cannot be skipped |
+| `relevant` | Skip logic: when to show the question |
+| `constraint` | Allowed values (range check) |
+| `constraint_message` | Error message if the value is not allowed |
+| `appearance` | How the question looks (`likert`, `multiline`, `field-list` …) |
+
+## choices
+
+One **row per answer option**, linked to `select_one` / `select_multiple` questions by `list_name`.
+
+| list_name | name | label |
+|:--|:--|:--|
+| sex | male | Male |
+| sex | female | Female |
+| sex | other | Other |
+
+- `list_name` must match the word after `select_one` in the survey sheet (`select_one sex`).
+- `name` is the code saved in your data; `label` is what the respondent sees.
+
+## settings
+
+One row describing the whole form.
+
+| form_title | form_id | version | default_language |
+|:--|:--|:--|:--|
+| My thesis survey | my_thesis_survey | 1 | English (en) |
+
+- `form_title`: the title shown on the form.
+- `form_id`: unique ID, no spaces.
+- `version`: increase it every time you change and re-upload the form.
+
+:::
+
+## A minimal example
+
+**survey**
+
+| type | name | label | required |
+|:--|:--|:--|:--|
+| note | intro | Welcome to the study | |
+| integer | age | Age in completed years | yes |
+| select_one sex | sex | Sex | yes |
+| text | comments | Any comments? | |
+
+**choices**
+
+| list_name | name | label |
+|:--|:--|:--|
+| sex | male | Male |
+| sex | female | Female |
+
+## Automatic metadata
+
+Add these rows at the top of every form. They record information automatically, without asking the respondent anything, which is useful for data quality checks.
+
+| type | name | What it records |
+|:--|:--|:--|
+| `start` | start | When the interview started |
+| `end` | end | When the interview ended |
+| `today` | today | Date of the interview |
+| `deviceid` | deviceid | ID of the phone used |

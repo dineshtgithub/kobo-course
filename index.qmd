@@ -1,0 +1,49 @@
+---
+title: "Digital Data Collection with XLSForm and KoboToolbox"
+subtitle: "A self-learning course"
+author: "Dinesh Timalsena, Timalsena.Dinesh@campus.lmu.de; dinesh.timalsena01@gmail.com"
+date: last-modified
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    code-copy: true
+    smooth-scroll: true
+    callout-appearance: default
+lang: en
+---
+
+# About this course {.unnumbered}
+
+Many research studies in Nepal still collect data on paper and enter it manually into Excel or SPSS afterwards. This course shows you how to replace that process with **digital data collection**: you design your questionnaire once in an Excel file (an **XLSForm**), upload it to **KoboToolbox**, and collect data on a phone, tablet or web browser. [**Data arrive clean, coded and ready for analysis.**]{.highlight}
+
+This **self-paced course** covers **basic to semi-advanced skills**. You can work through every module on this website to practice together and build your own research questionnaire in XLSForm. You will then **upload it to KoboToolbox** to collect data.
+
+::: {.callout-note}
+## Who is this course for?
+This course is for students, beginner researchers, survey tool developers, and anyone who wants to move from paper questionnaires to digital data collection. The examples use health-related data. No programming knowledge is needed; basic computer and Excel skills are enough.
+:::
+
+## Learning outcomes {.unnumbered}
+
+By the end of this course, you will be able to:
+
+1. Choose the correct question type (integer, decimal, single choice, multiple choice, date/time, text, note, etc.) for each research variable.
+2. Explain the sheets of an XLSForm (survey, choices, and settings) and create an XLSForm with a bilingual (English and Nepali) setup.
+3. Convert your own questionnaire into an XLSForm, including required questions, groups, skip logic, and constraints.
+4. Create a KoboToolbox account, upload and deploy an XLSForm, and collect test data.
+5. Build and edit a survey directly in the KoboToolbox Formbuilder.
+6. Download the KoboCollect app on a mobile device, link it to your KoboToolbox account, and use it to collect data offline and submit it to the server.
+7. Download collected data from the KoboToolbox server in Excel, CSV, or SPSS format for analysis.
+
+## Before you start {.unnumbered}
+
+- [ ] A laptop with Microsoft Excel, LibreOffice Calc or Google Sheets
+- [ ] A smartphone with internet access
+- [ ] The **KoboCollect** app installed on an Android phone (see [Module 7](07-kobocollect.qmd)). iPhone users can use the web form instead.
+- [ ] A KoboToolbox account (see [Module 5](05-kobo-account.qmd))
+- [ ] A copy of your research/thesis questionnaire (Word or PDF)
+- [ ] Download the course template: [msn_xlsform_template.xlsx](templates/msn_xlsform_template.xlsx), an example template to start your own form
+  

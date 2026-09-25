@@ -1,0 +1,109 @@
+---
+title: "Module 7: Collecting data with the KoboCollect mobile app"
+---
+
+**KoboCollect** is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works **offline**: you can interview participants in places without internet, and send the data to the server later.
+
+::: {.callout-note}
+## Before you start
+- An **Android** phone or tablet
+- Your KoboToolbox **username** and **password** (Module 5)
+- A **deployed** form in your KoboToolbox account (Module 6)
+- Internet access for setup, downloading the form and sending data
+:::
+
+## Step 1: Install KoboCollect
+
+1. Open the **Google Play Store** on your Android phone.
+2. Search for **KoboCollect** and install the app published by *KoboToolbox*.
+3. Open the app.
+
+<!-- ![KoboCollect in the Google Play Store](images/kobocollect-01-install.png){width=40% fig-align="center"} -->
+
+## Step 2: Connect the app to your KoboToolbox account
+
+1. When the app opens for the first time, choose **Manually enter project details**.
+2. Enter the server URL:
+
+   | Your account is on | Server URL for KoboCollect |
+   |:--|:--|
+   | Global server (kf.kobotoolbox.org) | `https://kc.kobotoolbox.org` |
+
+3. Enter your KoboToolbox **username** and **password**.
+4. Save the settings. The app's main menu appears.
+
+<!-- ![Entering the server details](images/kobocollect-02-server.png){width=40% fig-align="center"} -->
+
+::: {.callout-warning}
+The server URL for KoboCollect starts with **kc**, not **kf**. Using `kf.kobotoolbox.org` (the website address) is the most common setup mistake.
+:::
+
+## Step 3: Download your form to the phone
+
+1. In the main menu, tap **Download form**.
+2. Tick the form you deployed in KoboToolbox.
+3. Tap **Get selected**.
+
+If your form doesn't appear, check that it is **deployed** (not only uploaded) in KoboToolbox, and that you entered the correct username and server.
+
+<!-- ![Downloading the form](images/kobocollect-03-download.png){width=40% fig-align="center"} -->
+
+## Step 4: Fill in the form
+
+1. Tap **Start new form** and choose your form.
+2. Answer each question, and swipe left or tap **Next** to move forward.
+3. To switch between English and Nepali, open the **⋮ menu** at the top right and choose **Change language**.
+4. At the end of the form, choose:
+   - **Finalize**: the record is complete and ready to send.
+   - **Save as draft**: you can open it later from **Drafts** and finish it.
+
+<!-- ![Filling in the form](images/kobocollect-04-fill.png){width=40% fig-align="center"} -->
+
+::: {.callout-tip}
+Filling in forms does **not** need internet. You can complete many interviews offline during the day and send them all at once.
+:::
+
+## Step 5: Send data to the server
+
+1. When you have internet, tap **Ready to send** in the main menu.
+2. Select the records you want to send, or tap **Select all**.
+3. Tap **Send selected**.
+4. Sent records move to **Sent**. Check that they appear in the **Data** tab of your project in KoboToolbox.
+
+<!-- ![Sending finalized forms](images/kobocollect-05-send.png){width=40% fig-align="center"} -->
+
+To send records automatically whenever the phone is online, turn on **Auto send** in the app settings (under *Form management*).
+
+## Step 6: Update the form after changes
+
+If you change your XLSForm and redeploy it in KoboToolbox, the phone still has the old version.
+
+1. Send all finalized records first.
+2. Tap **Download form** again and select the updated form.
+3. Start new interviews with the new version.
+
+## Using an iPhone?
+
+KoboCollect is only available for Android. On an iPhone, iPad or computer, use the **web form** instead:
+
+1. In KoboToolbox, open your project's **Form** tab and find the **Collect data** section.
+2. Choose the **online-offline** web form option and copy the link.
+3. Open the link in the browser and add it to the **home screen**.
+
+The online-offline web form can also be filled in without internet once it has been opened, and it sends the data when the connection returns.
+
+## Good practice in the field
+
+- **Test before the field:** fill in and send 3 to 5 test records, then check them in KoboToolbox. Delete the test records before real data collection.
+- **Send data every day** when possible. Records on the phone can be lost if it is damaged, stolen or reset.
+- **Never uninstall KoboCollect or clear its data** while records are still waiting in *Drafts* or *Ready to send*.
+- **Protect the phone** with a screen lock, since it contains participants' data.
+- Carry a **charger or power bank**; long field days drain the battery.
+
+## Checklist
+
+- [ ] KoboCollect installed on an Android phone
+- [ ] App connected to the correct server (`kc…`) with my username
+- [ ] My form downloaded to the phone
+- [ ] At least one test record filled in, including a language switch
+- [ ] Test record sent and visible in the KoboToolbox **Data** tab

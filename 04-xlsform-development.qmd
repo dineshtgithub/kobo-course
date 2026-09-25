@@ -1,0 +1,41 @@
+---
+title: "Module 4: XLSForm development with your research questions"
+---
+
+Now build your own form. Work from your approved thesis questionnaire.
+
+## Step-by-step
+
+1. **Copy** `msn_xlsform_template.xlsx` and rename it, e.g. `lastname_survey_v1.xlsx`. Keep the four metadata rows (`start`, `end`, `today`, `deviceid`) and replace the example rows with your own questions and answer options.
+2. **Settings sheet:** write your form title (e.g. `Dinesh HTN Research`).
+3. **Consent first:** add an introduction `note` and a required `select_one yes_no` consent question. Put the rest of the form in groups with `relevant` = `${consent} = 'yes'`.
+4. **One group per section** of your questionnaire (Section A, B, C …).
+5. **For each question**, decide the `type` (use the Module 1 summary table), give it a short `name`, and copy the English label.
+6. **Add answer lists** in `choices`. Reuse lists (e.g. one `yes_no` list for all yes/no questions).
+7. **Add rules:** `required`, `relevant` for skip patterns, `constraint` for ranges.
+8. **Add Nepali labels** in `label::Nepali (ne)` if you will interview in Nepali.
+9. **Save** and upload it in Module 6 to test.
+
+## Naming conventions
+
+| Good `name` | Bad `name` | Why |
+|:--|:--|:--|
+| `age` | `Age of respondent` | No spaces |
+| `q12_knowledge` | `12_knowledge` | Must start with a letter |
+| `hb_level` | `hb-level` | Use `_`, not `-` |
+| `anc_visits` | `x1` | Should be meaningful |
+
+## Checklist before upload
+
+- [ ] Sheet names are exactly `survey`, `choices`, `settings`
+- [ ] Every `name` is unique with no spaces
+- [ ] Every `select_one` / `select_multiple` list exists in `choices`
+- [ ] Every `begin_group` has an `end_group`
+- [ ] Text values in `relevant`/`constraint` are in single quotes
+- [ ] Language column names are spelled identically everywhere
+- [ ] `version` increased if you changed the form
+
+::: {.callout-note}
+## Assignment
+Submit your XLSForm (`.xlsx`) covering **at least one full section** of your thesis questionnaire, including at least one skip rule, one constraint, and (if applicable) a Likert scale.
+:::

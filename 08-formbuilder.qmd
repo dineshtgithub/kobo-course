@@ -1,0 +1,29 @@
+---
+title: "Module 7: Developing survey questions in the Kobo Formbuilder"
+---
+
+KoboToolbox also has a point-and-click **Formbuilder**. It is useful for small forms and quick edits. XLSForm is better for long, bilingual thesis questionnaires, but it helps to know both.
+
+## Build a form from scratch
+
+1. **NEW** → **Build from scratch** → enter project details → **Create project**.
+2. Click **+** to add a question, type the question text, and choose the type (Select One, Select Many, Text, Number, Decimal, Date, Time, Note, Rating …).
+3. For choice questions, type each option. Click **+** to add more options.
+4. Click the **gear icon** (Settings) on a question to set:
+   - **Mandatory response** (required)
+   - **Skip logic** (relevant): choose the earlier question and condition
+   - **Validation criteria** (constraint) and the error message
+   - **Appearance** and **hint**
+5. Select several questions and click **Group** to create a section.
+6. Use **Manage translations** to add Nepali labels.
+7. **Save**, **Preview**, then **Deploy**.
+
+## Formbuilder and XLSForm together
+
+- Download any Formbuilder project as XLS (**Form tab → ⋯ → Download XLS**). This is a good way to learn XLSForm syntax: build a question in the Formbuilder, download, and see how it is written.
+- You can upload an XLSForm and then make small edits in the Formbuilder.
+
+::: {.callout-note}
+## Practice
+Rebuild the Section C Likert scale from the example file in the Formbuilder using the **Rating** question type, then download it as XLS and compare it with the XLSForm version.
+:::

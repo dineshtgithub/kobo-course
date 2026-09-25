@@ -1,0 +1,54 @@
+project:
+  type: website
+  resources:
+    - templates/
+
+website:
+  title: "Kobo & XLSForm Course"
+  page-navigation: true          # adds "Previous / Next" buttons at the bottom of every page
+  search: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: templates/msn_xlsform_template.xlsx
+        text: XLSForm template
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - href: index.qmd
+        text: "About this course"
+      - section: "Modules"
+        contents:
+          - href: 01-question-types.qmd
+            text: "1. Types of survey questions"
+          - href: 02-xlsform-intro.qmd
+            text: "2. Introduction to XLSForm"
+          - href: 03-question-features.qmd
+            text: "3. Question features in XLSForm"
+          - href: 04-xlsform-development.qmd
+            text: "4. XLSForm development"
+          - href: 05-kobo-account.qmd
+            text: "5. KoboToolbox account (homework)"
+          - href: 06-kobo-upload.qmd
+            text: "6. Interface and uploading"
+          - href: 07-kobocollect.qmd
+            text: "7. KoboCollect mobile app"
+          - href: 08-formbuilder.qmd
+            text: "8. Kobo Formbuilder"
+      - href: resources.qmd
+        text: "Resources"
+  page-footer:
+    center: "Digital Data Collection with XLSForm and KoboToolbox"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    lightbox: true
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    code-copy: true
+    smooth-scroll: true

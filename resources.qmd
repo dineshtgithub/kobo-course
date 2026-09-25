@@ -1,0 +1,16 @@
+---
+title: "Resources"
+---
+
+- KoboToolbox Help Center: <https://support.kobotoolbox.org>
+- XLSForm reference: <https://xlsform.org>
+- Particify: <https://particify.de>
+- KoboToolbox community forum: <https://community.kobotoolbox.org>
+
+## Course files
+
+- [XLSForm template with bilingual worked example](templates/msn_xlsform_template.xlsx)
+
+---
+
+*This course material is shared for educational use. Please cite the course page if you adapt it.*

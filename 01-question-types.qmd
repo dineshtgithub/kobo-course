@@ -1,0 +1,280 @@
+---
+title: "Module 1: Types of survey questions"
+---
+
+Every variable in your research has a **level of measurement**. The question type you choose decides what kind of data you get and which statistics you can run later.
+
+## Variables and question types
+
+In research, a **variable** is any characteristic you measure or record for each participant, such as age, sex, or weight. Variables are divided into two main types:
+
+**Numerical variables** are measured as numbers, and calculations such as mean or median.
+
+- *Discrete*: whole numbers that are counted, such as age in years or number of children.
+- *Continuous*: measurements that can have decimals, such as blood sugar, height, haemoglobin, and most other biomarker values.
+
+**Categorical variables** place each participant into a group or category.
+
+- *Nominal*: categories with no natural order, such as sex, blood group, or hair color.
+- *Ordinal*: categories with a meaningful order, such as education level, pain severity, cancer stage, or a Likert scale.
+
+Dates, times and free-text answers are also collected in surveys. **The table below shows which question type to use in KoboToolbox for each type of variable**.
+
+| Variable type | Description | Examples | Question type in KoboToolbox |
+|:--|:--|:--|:--|
+| **Numerical, discrete** | Whole numbers (counts) | Age in years, number of children | `integer` |
+| **Numerical, continuous** | Measurements with decimals | Blood sugar, height, haemoglobin | `decimal` |
+| **Categorical, nominal** | Categories with no order | Sex, blood group, type of cancer | `select_one` / `select_multiple` |
+| **Categorical, ordinal** | Categories with a meaningful order | Education level, cancer stage, Likert scale | `select_one` |
+| **Date and time** | Calendar dates or clock times | Date of admission, time of birth | `date` / `time` / `datetime` |
+| **Text** | Free, open-ended answers | "Other, specify", comments | `text` |
+| **None (information only)** | Shows a message; no answer is collected | Introduction, section instructions, thank-you message | `note` |
+
+## Common question types in XLSForm (KoboToolbox)
+
+In an XLSForm, each question has a **question type**, written in the `type` column of the `survey` sheet. These are the question types most often used in research questionnaires:
+
+| Question type | What it collects | Example |
+|:--|:--|:--|
+| `integer` | Whole number | Age in completed years |
+| `decimal` | Number with decimals | Weight (kg) |
+| `range` | Number chosen on a slider or scale | Pain score 0–10 |
+| `text` | Free text | Other occupation |
+| `select_one list_name` | One option from a list | Marital status |
+| `select_multiple list_name` | One or more options from a list | Symptoms experienced |
+| `date` | Date | Date of admission |
+| `time` | Time | Time of medication |
+| `datetime` | Date and time | Date and time of delivery |
+| `note` | Displays information, no answer collected | Section instructions |
+| `acknowledge` | A single "OK" confirmation | Consent statement read |
+| `geopoint` | GPS location | Household location |
+| `image` | Photo | Photo of a wound or document |
+| `audio` | Audio recording | Recorded interview |
+| `barcode` | Scans a barcode or QR code | Patient ID card |
+| `calculate` | Hidden calculation, not shown to respondent | Total knowledge score |
+| `begin_group` / `end_group` | Groups questions into sections | Section A: Demographics |
+
+The rest of this module looks closely at the seven question types you will use most: integer, decimal, single option, multiple option, date and time, text, and note.
+
+::: {.callout-tip}
+## More question types and advanced features
+XLSForm supports many more question types and options, such as repeat groups, file uploads, and cascading selects. For the full list with examples, visit the [XLSForm question types reference](https://xlsform.org/en/#question-types).
+:::
+
+## Integer (whole number)
+
+Used for counts and ages in completed years. No decimal point is allowed.
+
+> **Poll:** How many years have you worked as a nurse?
+
+- Examples: age in years, number of children, parity, number of hospital admissions, days of hospital stay.
+- Analysis: mean, median, SD, t-test, correlation.
+
+## Decimal
+
+Used for measurements that need a fractional part.
+
+> **Poll:** What is your height in metres? (e.g. 1.62)
+
+- Examples: weight (kg), height (m), haemoglobin (g/dL), body temperature (°C), BMI.
+- Tip: always write the **unit** in the question.
+
+## Single option (select one)
+
+The respondent can choose **only one** answer from a list.
+
+> **Poll:** In which inpatient department do you currently work? ☐ Medical ☐ Surgical ☐ Paediatric ☐ Maternity ☐ Critical care
+
+- Examples: sex, marital status, education level, yes/no questions.
+- Categories must not overlap, and must cover every possible answer (add "Other" if needed).
+
+## Multiple option (select multiple)
+
+The respondent can choose **one or more** answers.
+
+> **Poll:** Which sources do you use to learn about research methods? (select all that apply) ☐ Textbooks ☐ Journals ☐ YouTube ☐ Teachers ☐ AI tools
+
+- Examples: symptoms experienced, sources of health information, comorbidities.
+- In the data, each option becomes its own yes/no.
+
+## Date and time
+
+> **Poll:** On what date did you join the M.Sc. Nursing programme?  
+> **Poll:** At what time does your morning duty usually start?
+
+- `date`: date of admission, date of delivery, last menstrual period.
+- `time`: time of medication, time of birth.
+- `datetime`: exact date **and** time of an event.
+- Digital forms use a date picker, so there are no confusing formats like 05/06/2026.
+
+## Text
+
+Free, open-ended answers.
+
+> **Poll:** In one word, what is the biggest challenge in collecting thesis data?
+
+- Examples: "Other (please specify)", suggestions, comments, qualitative answers.
+- Use text questions only when needed. They take longer to answer and are harder to analyse.
+
+## Note
+
+A note shows information to the respondent or data collector but **collects no answer**.
+
+> Example: *"This survey has 25 questions and takes about 10 minutes to complete. Your answers will be kept confidential."*
+
+- Use notes for introductions, section instructions, and thank-you messages.
+
+
+## Quiz: choose the question type
+
+For each question, click the XLSForm question type you would use. Then press **Check answers**.
+
+```{=html}
+<div id="qt-quiz"></div>
+
+<style>
+  #qt-quiz fieldset {
+    border: 1px solid #dee2e6;
+    border-left: 4px solid var(--course-color, #2780e3);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+  }
+  #qt-quiz legend {
+    font-size: 1rem;
+    font-weight: 600;
+    float: none;
+    width: auto;
+    padding: 0 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  #qt-quiz label {
+    display: block;
+    padding: 0.25rem 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #qt-quiz label:hover { background: #f1f6fd; }
+  #qt-quiz input { margin-right: 0.5rem; }
+  #qt-quiz code { font-size: 0.95rem; }
+  #qt-quiz .qt-right { background: #e6f4ea; border-left-color: #1e7b4f; }
+  #qt-quiz .qt-wrong { background: #fdecea; border-left-color: #c0392b; }
+  #qt-quiz .qt-feedback { margin-top: 0.4rem; font-size: 0.95rem; }
+  #qt-quiz .qt-buttons button {
+    background: var(--course-color, #2780e3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1.2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  #qt-quiz .qt-score {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: var(--course-color, #2780e3);
+  }
+</style>
+
+<script>
+(function () {
+  const questions = [
+    { q: "How many times have you been admitted to hospital in the past year?",
+      options: ["integer", "decimal", "text", "select_one"], answer: 0,
+      why: "It is a count, so a whole number." },
+    { q: "What is your haemoglobin level (g/dL)?",
+      options: ["integer", "decimal", "text", "note"], answer: 1,
+      why: "It is a measurement that needs decimals." },
+    { q: "What is your marital status?",
+      options: ["select_multiple", "text", "select_one", "integer"], answer: 2,
+      why: "Only one status applies to each person." },
+    { q: "Which symptoms have you had in the last 7 days? (select all that apply)",
+      options: ["select_one", "select_multiple", "text", "note"], answer: 1,
+      why: "More than one symptom can be chosen." },
+    { q: "On what date were you admitted to this hospital?",
+      options: ["time", "datetime", "date", "text"], answer: 2,
+      why: "Only a calendar date is needed." },
+    { q: "At what time do you usually take your medicine?",
+      options: ["date", "time", "integer", "datetime"], answer: 1,
+      why: "Only a clock time is needed." },
+    { q: "What was the exact date and time of delivery?",
+      options: ["date", "time", "datetime", "text"], answer: 2,
+      why: "Both the date and the time are needed." },
+    { q: "If your occupation is \"Other\", please specify.",
+      options: ["select_one", "note", "text", "select_multiple"], answer: 2,
+      why: "It is a free, open-ended answer." },
+    { q: "\"Section B: The next questions are about your daily activities. Please       answer honestly.\"",
+      options: ["text", "note", "select_one", "integer"], answer: 1,
+      why: "It only shows instructions; no answer is collected." },
+    { q: "How satisfied are you with nursing care? (Very dissatisfied to Very satisfied)",
+      options: ["select_multiple", "integer", "text", "select_one"], answer: 3,
+      why: "It is an ordered scale (Likert) where one option is chosen." }
+  ];
+
+  const box = document.getElementById("qt-quiz");
+
+  function render() {
+    let html = "";
+    questions.forEach((item, i) => {
+      html += `<fieldset id="qt-q${i}"><legend>${i + 1}. ${item.q}</legend>`;
+      item.options.forEach((opt, j) => {
+        html += `<label><input type="radio" name="qt${i}" value="${j}"><code>${opt}</code></label>`;
+      });
+      html += `<div class="qt-feedback"></div></fieldset>`;
+    });
+    html += `<div class="qt-score"></div>
+             <div class="qt-buttons">
+               <button type="button" id="qt-check">Check answers</button>
+               <button type="button" id="qt-reset" style="display:none">Try again</button>
+             </div>`;
+    box.innerHTML = html;
+    document.getElementById("qt-check").onclick = check;
+    document.getElementById("qt-reset").onclick = render;
+  }
+
+  function check() {
+    let score = 0;
+    questions.forEach((item, i) => {
+      const fs = document.getElementById(`qt-q${i}`);
+      const chosen = fs.querySelector("input:checked");
+      const feedback = fs.querySelector(".qt-feedback");
+      const correct = `<code>${item.options[item.answer]}</code>`;
+      fs.querySelectorAll("input").forEach(inp => inp.disabled = true);
+
+      if (chosen && Number(chosen.value) === item.answer) {
+        score++;
+        fs.classList.add("qt-right");
+        feedback.innerHTML = `✅ Correct: ${correct}. ${item.why}`;
+      } else {
+        fs.classList.add("qt-wrong");
+        const yours = chosen ? "" : "Not answered. ";
+        feedback.innerHTML = `❌ ${yours}Correct answer: ${correct}. ${item.why}`;
+      }
+    });
+    box.querySelector(".qt-score").textContent =
+      `Your score: ${score} out of ${questions.length}`;
+    document.getElementById("qt-check").style.display = "none";
+    document.getElementById("qt-reset").style.display = "inline-block";
+  }
+
+  render();
+})();
+</script>
+```
+::: {.callout-tip collapse="true"}
+## Answers (click to show)
+
+| No. | Answer | Why |
+|:--|:--|:--|
+| 1 | `integer` | A count, so a whole number |
+| 2 | `decimal` | A measurement with decimals |
+| 3 | `select_one` | Only one status applies |
+| 4 | `select_multiple` | More than one symptom can be chosen |
+| 5 | `date` | A calendar date |
+| 6 | `time` | A clock time |
+| 7 | `datetime` | Both date and time are needed |
+| 8 | `text` | A free, open-ended answer |
+| 9 | `note` | Information only; no answer is collected |
+| 10 | `select_one` | An ordered scale where one option is chosen (Likert) |
+:::

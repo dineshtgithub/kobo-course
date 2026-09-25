@@ -1,0 +1,366 @@
+---
+title: "Module 3: Question features in XLSForm"
+---
+## Download the template
+Open [msn_xlsform_template.xlsx](templates/msn_xlsform_template.xlsx) and follow along. It has the three sheets, the metadata rows, the correct bilingual column headers, and a complete worked example. Always start from this file instead of a blank Excel sheet. The `instructions` sheet inside it is ignored by KoboToolbox. Most features below are used in that file.
+
+## Required questions
+
+Write `yes` in the `required` column. The form will not continue until the question is answered.
+
+| type | name | label | required |
+|:--|:--|:--|:--|
+| integer | age | Age (completed years) | yes |
+
+Make key questions (outcome, main exposure, consent) required. Leave optional questions, such as comments, not required.
+
+## Grouping questions (`begin_group` / `end_group`)
+
+Groups organise your questionnaire into sections, like Section A, B, C in your questionnaire.
+
+| type | name | label | appearance |
+|:--|:--|:--|:--|
+| begin_group | demographics | Section A: Socio-demographic information | field-list |
+| integer | age | Age (completed years) | |
+| select_one sex | sex | Sex | |
+| end_group | demographics | | |
+
+- Every `begin_group` **must** have a matching `end_group`.
+- `appearance` = `field-list` shows all questions of the group on **one screen**.
+- A `relevant` condition on `begin_group` applies to the whole group.
+
+## Question skipping (skip logic with `relevant`)
+
+The `relevant` column says **when** a question should appear. Refer to an earlier question with `${name}`.
+
+| type | name | label | relevant |
+|:--|:--|:--|:--|
+| select_one occupation | occupation | Main occupation | |
+| text | occupation_other | Please specify other occupation | `${occupation} = 'other'` |
+| select_multiple symptoms | symptoms | Symptoms in the last 7 days | |
+| integer | fever_days | Days of fever | `selected(${symptoms}, 'fever')` |
+
+Common patterns:
+
+| Situation | `relevant` expression |
+|:--|:--|
+| Show if answer is "yes" | `${consent} = 'yes'` |
+| Show if age is 60 or above | `${age} >= 60` |
+| Show if an option is ticked in a multiple choice | `selected(${symptoms}, 'fever')` |
+| Show if female **and** married | `${sex} = 'female' and ${marital} = 'married'` |
+| Show if either condition | `${diabetes} = 'yes' or ${hypertension} = 'yes'` |
+
+::: {.callout-warning}
+Text values need **single quotes** (`'yes'`). Numbers do not (`${age} >= 60`). The value must be the choice **name**, not the label (`'yes'`, not `'Yes'` or `'हो'`).
+:::
+
+## Accepting only certain values (constraint)
+
+A `constraint` checks the answer before the respondent can continue. The dot `.` means "this question's answer".
+
+| type | name | label | constraint | constraint_message |
+|:--|:--|:--|:--|:--|
+| integer | age | Age (completed years) | `. >= 30 and . <= 80` | Age must be between 30 and 80 years. |
+| decimal | weight | Weight (kg) | `. >= 20 and . <= 200` | Weight must be between 20 and 200 kg. |
+| date | admission_date | Date of admission | `. <= today()` | Date cannot be in the future. |
+
+Useful constraints:
+
+| Purpose | `constraint` |
+|:--|:--|
+| Range 30 to 80 | `. >= 30 and . <= 80` |
+| Not in the future | `. <= today()` |
+| Cannot be more than the age | `. <= ${age}` |
+| "None" cannot be selected with other options | `not(selected(., 'none') and count-selected(.) > 1)` |
+| Maximum 3 options ticked | `count-selected(.) <= 3` |
+
+For a bilingual form, add a `constraint_message::Nepali (ne)` column as well, so the error message appears in both languages.
+
+::: {.callout-tip}
+Use your **inclusion criteria** as constraints. If your study includes adults aged 30–80, the form should make it impossible to enter 25 or 95.
+:::
+
+## Calculations (`calculate`)
+
+A `calculate` row works out a value automatically. It is not shown to the respondent, but it is saved in the data.
+
+| type | name | label | calculation |
+|:--|:--|:--|:--|
+| decimal | weight | Weight (kg) | |
+| decimal | height | Height (cm) | |
+| calculate | bmi | | `round(${weight} div pow(${height} div 100, 2), 1)` |
+| note | bmi_note | BMI: ${bmi} kg/m² | |
+
+- Use `div` for division and `pow(number, power)` for powers. `/` and `^` don't work in XLSForm.
+- Show a calculated value to the respondent by writing `${name}` inside a note label.
+- Type formulas by hand rather than pasting them from Word, so no hidden characters or curly quotes get in.
+
+## Likert scale
+
+Create the scale once in `choices`, then reuse it for every item. Use `appearance` = `likert` to display the options in a row.
+
+**choices**
+
+| list_name | name | label::English (en) | label::Nepali (ne) |
+|:--|:--|:--|:--|
+| agree5 | 1 | Strongly disagree | पूर्ण असहमत |
+| agree5 | 2 | Disagree | असहमत |
+| agree5 | 3 | Neutral | तटस्थ |
+| agree5 | 4 | Agree | सहमत |
+| agree5 | 5 | Strongly agree | पूर्ण सहमत |
+
+**survey**
+
+| type | name | label::English (en) | appearance | calculation |
+|:--|:--|:--|:--|:--|
+| begin_group | satisfaction | Section C: Satisfaction with nursing care | field-list | |
+| select_one agree5 | sat1 | Nurses explained procedures clearly. | likert | |
+| select_one agree5 | sat2 | Nurses responded promptly when I needed help. | likert | |
+| select_one agree5 | sat3 | I was treated with respect and dignity. | likert | |
+| end_group | satisfaction | | | |
+
+- Using numbers `1–5` as choice names makes scoring easy.
+- The `calculate` row adds up the three items into a total score automatically.
+- For **negatively worded items**, reverse the score at analysis, or use a separate list where "Strongly disagree" = 5.
+- To show all items as one grid instead, use `table-list` on `begin_group` (see *Appearance* in the tips below).
+
+::: {.callout-tip collapse="true"}
+## XLSForm tips and tricks
+
+Most upload errors come from a few small mistakes. Check these before you upload your form.
+
+### The `name` column
+
+- **No spaces.** Use an underscore instead: `marital_status`, not `marital status`.
+- **Start with a letter**, not a number: `q1_age`, not `1_age`.
+- **Use only letters, numbers and underscores.** No hyphens, dots, brackets or Nepali characters.
+- **Every name must be unique** in the survey sheet.
+- **Keep names short and meaningful**, in lowercase: `hb_level` is better than `x7` or `Haemoglobin_Level_Of_Patient`.
+- **Don't rename a question after data collection starts.** KoboToolbox treats the new name as a new question, and your data will be split into two columns.
+
+### The `choices` sheet
+
+- The `list_name` must match **exactly** the word after `select_one` or `select_multiple` in the survey sheet, including spelling and capital letters.
+- Choice `name`s follow the same rules: no spaces, unique within the list.
+- **Reuse lists.** One `yes_no` list can serve every yes/no question.
+- For Likert scales, use numbers as choice names (`1` to `5`) to make scoring easy.
+- Add **"Other"** with a follow-up `text` question shown only when "Other" is selected.
+- Use fixed codes for special answers and keep them the same in every list, for example `98` = Don't know, `99` = Refused.
+- **Don't change choice names after deployment.** You can edit labels, but changing names makes old and new data inconsistent.
+
+### Skip logic and constraints
+
+- Refer to other questions as `${name}`, spelled exactly as in the `name` column.
+- Put **text values in single quotes** (`${consent} = 'yes'`). Numbers don't need quotes (`${age} >= 18`).
+- Use the choice **name**, not the label: `'yes'`, not `'Yes'` or `'हो'`.
+- For `select_multiple`, use `selected(${symptoms}, 'fever')`, not `${symptoms} = 'fever'`.
+- In a constraint, `.` means the current answer: `. >= 30 and . <= 80`.
+- Write `and` / `or` in lowercase.
+- Always add a `constraint_message`, so the data collector knows what went wrong.
+
+### Structure
+
+- Sheet names must be exactly `survey`, `choices` and `settings`, in lowercase.
+- Column headers must be spelled exactly (`constraint_message`, not `constraint message`).
+- Every `begin_group` needs a matching `end_group`.
+- Don't merge cells or use Excel formulas in the form.
+- Every question needs a label, except `calculate` rows and metadata (`start`, `end`, `today`, `deviceid`).
+
+### Multiple languages
+
+- Write language names **identically** in every column: `label::Nepali (ne)` everywhere, never `Nepali (ne)` in one column and `nepali(ne)` in another.
+- Fill in every language column for every question, including hints, constraint messages and choices.
+- Type Nepali in **Unicode** (Nepali Unicode keyboard). Preeti and other old fonts display as random letters on phones.
+- Set `default_language` in the settings sheet.
+
+### Appearance: change how a question looks
+
+The `appearance` column changes how a question or group is **displayed**, without changing the data that are saved. Common appearances:
+
+| appearance | Use with | What it does |
+|:--|:--|:--|
+| `field-list` | `begin_group` | Shows all questions of the group on one screen |
+| `table-list` | `begin_group` | Shows questions with the same answer options as a grid |
+| `likert` | `select_one` | Shows options in a row, like a rating scale |
+| `minimal` | `select_one` / `select_multiple` | Shows options in a drop-down list, useful for long lists |
+| `multiline` | `text` | Gives a larger box for long answers |
+| `month-year` | `date` | Asks only for month and year, e.g. when the exact date isn't known |
+
+- More appearances
+Appearances can look slightly different in the web form and in KoboCollect, so always preview your form. For the full list with examples, see the [XLSForm appearance reference](https://xlsform.org/en/#appearance).
+
+
+### Testing and versions
+
+**Check your form online before uploading** [XLSForm Online](https://getodk.org/xlsform/) is a free tool from ODK that checks your XLSForm for errors, without needing a KoboToolbox account.
+
+1. Go to <https://getodk.org/xlsform/>.
+2. Click **Choose file** and select your `.xlsx` form.
+3. Click **Submit**.
+4. If there are errors, a message appears with the **row number** and the problem. Fix it in Excel, save, and submit again.
+5. When the form has no errors, click **Preview in browser** to fill in the form as a respondent would, and test the skip logic, constraints and language switch.
+
+XLSForm Online uses the same XLSForm rules as KoboToolbox, so most errors show up here first. Always do a final check in KoboToolbox before deploying, as a few display options can look slightly different there.
+
+
+- **Preview** the form in KoboToolbox before deploying, and test the skip logic, constraints and language switch.
+- Submit test data with **wrong values** on purpose, to check that your constraints work.
+- **Increase the `version`** in the settings sheet every time you change and re-upload the form.
+- Save each version with a new file name (`survey_v1.xlsx`, `survey_v2.xlsx`), so you can go back if something breaks.
+- **Delete all test submissions** before real data collection starts.
+
+::: {.callout-warning}
+## Excel traps
+- **Curly quotes:** Excel may change `'yes'` into `‘yes’`, and KoboToolbox won't accept curly quotes. In Windows Excel, turn this off under *File → Options → Proofing → AutoCorrect Options → AutoFormat As You Type*, and untick "Straight quotes with smart quotes".
+- **Extra spaces:** a space at the end of a cell (`sex `) is invisible but breaks the link between `list_name` and `select_one sex`.
+- **Automatic dates:** Excel may turn entries like `1-5` into a date. Format those cells as *Text* before typing.
+:::
+
+::: {.callout-tip}
+## Stuck on an error?
+Read the error message carefully. It usually names the **row number** and the problem. Also check the course template: if your form works differently from the example, compare the two row by row.
+:::
+
+:::
+
+
+## Quiz: question features
+
+For each question, click the answer you think is correct. Then press **Check answers**.
+
+```{=html}
+<div id="qt-quiz"></div>
+
+<style>
+  #qt-quiz fieldset {
+    border: 1px solid #dee2e6;
+    border-left: 4px solid var(--course-color, #2780e3);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+  }
+  #qt-quiz legend {
+    font-size: 1rem;
+    font-weight: 600;
+    float: none;
+    width: auto;
+    padding: 0 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  #qt-quiz label {
+    display: block;
+    padding: 0.25rem 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #qt-quiz label:hover { background: #f1f6fd; }
+  #qt-quiz input { margin-right: 0.5rem; }
+  #qt-quiz code { font-size: 0.95rem; }
+  #qt-quiz .qt-right { background: #e6f4ea; border-left-color: #1e7b4f; }
+  #qt-quiz .qt-wrong { background: #fdecea; border-left-color: #c0392b; }
+  #qt-quiz .qt-feedback { margin-top: 0.4rem; font-size: 0.95rem; }
+  #qt-quiz .qt-buttons button {
+    background: var(--course-color, #2780e3);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1.2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  #qt-quiz .qt-score {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    color: var(--course-color, #2780e3);
+  }
+</style>
+
+<script>
+(function () {
+  // code: true shows the options as code (expressions); false shows plain text
+  const questions = [
+    { q: "A question on \"number of living children\" should only appear for married women. Which relevant is correct?",
+      code: true,
+      options: ["${sex} = 'female' or ${marital} = 'married'",
+                "${sex} = 'female' and ${marital} = 'married'",
+                "${sex} = Female and ${marital} = Married",
+                "sex = 'female' and marital = 'married'"], answer: 1,
+      why: "Both conditions must be true, so use and. Text values need single quotes and the choice name, and questions are referred to as ${name}." },
+    { q: "Haemoglobin must be between 4 and 20 g/dL. Which constraint is correct?",
+      code: true,
+      options: [". > 4 or . < 20", "4 <= . <= 20", ". >= 4 and . <= 20", "${hb} = 4 to 20"], answer: 2,
+      why: "The dot means the current answer, and both limits must be true at the same time, so use and." },
+    { q: "Fever days should only appear if \"fever\" is ticked in the select_multiple question symptoms. Which relevant is correct?",
+      code: true,
+      options: ["${symptoms} = 'fever'", "selected(${symptoms}, 'fever')", "${symptoms} = 'Fever'", "selected(symptoms, fever)"], answer: 1,
+      why: "For select_multiple, use selected(). The = sign only works when exactly one option is chosen." },
+    { q: "Which calculation gives BMI correctly (weight in kg, height in cm)?",
+      code: true,
+      options: ["${weight} / (${height} / 100)^2",
+                "${weight} div pow(${height} div 100, 2)",
+                "weight div height^2",
+                "${weight} div ${height} * 2"], answer: 1,
+      why: "XLSForm uses div for division and pow() for powers. / and ^ don't work." },
+    { q: "You added begin_group, but the form will not upload. What is the most likely reason?",
+      code: false,
+      options: ["The group has no appearance", "A question in the group is not required", "A matching end_group is missing", "The group label is too long"], answer: 2,
+      why: "Every begin_group must have a matching end_group." },
+    { q: "Which setting shows all questions of a group on one screen?",
+      code: false,
+      options: ["required = yes on begin_group", "appearance = field-list on begin_group", "relevant = field-list on begin_group", "constraint = one-screen on begin_group"], answer: 1,
+      why: "field-list in the appearance column of begin_group puts the whole group on one screen." }
+  ];
+
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const show = (item, s) => item.code ? `<code>${esc(s)}</code>` : esc(s);
+  const box = document.getElementById("qt-quiz");
+
+  function render() {
+    let html = "";
+    questions.forEach((item, i) => {
+      html += `<fieldset id="qt-q${i}"><legend>${i + 1}. ${esc(item.q)}</legend>`;
+      item.options.forEach((opt, j) => {
+        html += `<label><input type="radio" name="qt${i}" value="${j}">${show(item, opt)}</label>`;
+      });
+      html += `<div class="qt-feedback"></div></fieldset>`;
+    });
+    html += `<div class="qt-score"></div>
+             <div class="qt-buttons">
+               <button type="button" id="qt-check">Check answers</button>
+               <button type="button" id="qt-reset" style="display:none">Try again</button>
+             </div>`;
+    box.innerHTML = html;
+    document.getElementById("qt-check").onclick = check;
+    document.getElementById("qt-reset").onclick = render;
+  }
+
+  function check() {
+    let score = 0;
+    questions.forEach((item, i) => {
+      const fs = document.getElementById(`qt-q${i}`);
+      const chosen = fs.querySelector("input:checked");
+      const feedback = fs.querySelector(".qt-feedback");
+      const correct = show(item, item.options[item.answer]);
+      fs.querySelectorAll("input").forEach(inp => inp.disabled = true);
+
+      if (chosen && Number(chosen.value) === item.answer) {
+        score++;
+        fs.classList.add("qt-right");
+        feedback.innerHTML = `✅ Correct: ${correct}. ${esc(item.why)}`;
+      } else {
+        fs.classList.add("qt-wrong");
+        const yours = chosen ? "" : "Not answered. ";
+        feedback.innerHTML = `❌ ${yours}Correct answer: ${correct}. ${esc(item.why)}`;
+      }
+    });
+    box.querySelector(".qt-score").textContent =
+      `Your score: ${score} out of ${questions.length}`;
+    document.getElementById("qt-check").style.display = "none";
+    document.getElementById("qt-reset").style.display = "inline-block";
+  }
+
+  render();
+})();
+</script>
+```

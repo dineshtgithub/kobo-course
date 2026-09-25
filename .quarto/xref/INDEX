@@ -1,0 +1,35 @@
+{
+  "index.qmd": {
+    "index.html": "6e823008"
+  },
+  "04-xlsform-development.qmd": {
+    "04-xlsform-development.html": "0539153d"
+  },
+  "02-xlsform-intro.qmd": {
+    "02-xlsform-intro.html": "1a84699e"
+  },
+  "07-formbuilder.qmd": {
+    "07-formbuilder.html": "802c556a"
+  },
+  "06-kobo-upload.qmd": {
+    "06-kobo-upload.html": "a9cca4bc"
+  },
+  "03-question-features.qmd": {
+    "03-question-features.html": "d8e52ef5"
+  },
+  "05-kobo-account.qmd": {
+    "05-kobo-account.html": "5eb86670"
+  },
+  "resources.qmd": {
+    "resources.html": "06e191e6"
+  },
+  "01-question-types.qmd": {
+    "01-question-types.html": "4b730bfd"
+  },
+  "08-formbuilder.qmd": {
+    "08-formbuilder.html": "8d022185"
+  },
+  "07-kobocollect.qmd": {
+    "07-kobocollect.html": "f2f9e7d5"
+  }
+}

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Dinesh Timalsena, Timalsena.Dinesh@campus.lmu.de; dinesh.timalsena01@gmail.com">
-<meta name="dcterms.date" content="2026-09-25">
+<meta name="dcterms.date" content="2026-09-26">
 
-<title>Digital Data Collection with XLSForm and KoboToolbox – Kobo &amp; XLSForm Course</title>
+<title>From Paper to Digital: Survey Data Collection with KoboToolbox – From Paper to Digital</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f1b8ffe018e27b3e49848c173bc17ec4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c08d3273e37e7f5e3c9409009cd7f4c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,6 +77,43 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<style>
+  /* green: change these two values to recolour the whole site */
+  :root {
+    --course-color: #00883A;        /* green */
+    --course-color-light: #E6F3EB;  /* light green shade */
+  }
+
+  /* Page title and subtitle */
+  body .quarto-title .title,
+  body .quarto-title .subtitle {
+    color: var(--course-color);
+  }
+
+  /* All headings (#, ##, ###, ...) */
+  body h1, body h2, body h3,
+  body h4, body h5, body h6 {
+    color: var(--course-color);
+  }
+
+  /* Highlighted text: [text]{.highlight} */
+  .highlight {
+    color: var(--course-color);
+    font-weight: bold;
+  }
+
+  /* Note callouts: green border, light green header, green icon */
+  body div.callout-note.callout {
+    border-left-color: var(--course-color) !important;
+  }
+  body div.callout-note .callout-header,
+  body div.callout-note .callout-title {
+    background-color: var(--course-color-light) !important;
+  }
+  body div.callout-note .callout-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300883A' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3E%3Cpath d='m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'/%3E%3C/svg%3E") !important;
+  }
+</style>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -90,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Kobo &amp; XLSForm Course</span>
+    <span class="navbar-title">From Paper to Digital</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -186,12 +223,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-kobo-upload.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Interface and uploading</span></a>
+ <span class="menu-text">6. Uploading XLSForm into KoboToolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-kobocollect.html" class="sidebar-item-text sidebar-link">
+  <a href="./07-kobocollect-mobile-app.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. KoboCollect mobile app</span></a>
   </div>
 </li>
@@ -199,6 +236,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./08-formbuilder.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Kobo Formbuilder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-download-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Downloading your data</span></a>
   </div>
 </li>
       </ul>
@@ -211,29 +254,28 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-this-course" id="toc-about-this-course" class="nav-link active" data-scroll-target="#about-this-course">About this course</a>
-  <ul class="collapse">
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
-  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start">Before you start</a></li>
-  </ul></li>
-  </ul>
-</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-this-course" id="toc-about-this-course" class="nav-link active" data-scroll-target="#about-this-course">About this course</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
+  <li><a href="#course-modules" id="toc-course-modules" class="nav-link" data-scroll-target="#course-modules">Course modules</a></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start">Before you start</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Digital Data Collection with XLSForm and KoboToolbox</h1>
-<p class="subtitle lead">A self-learning course</p>
+<h1 class="title">From Paper to Digital: Survey Data Collection with KoboToolbox</h1>
+<p class="subtitle lead">A self-paced course</p>
 </div>
 
 
@@ -250,7 +292,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 25, 2026</p>
+      <p class="date">September 26, 2026</p>
     </div>
   </div>
   
@@ -262,10 +304,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about-this-course" class="level1 unnumbered">
-<h1 class="unnumbered">About this course</h1>
+<section id="about-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="about-this-course">About this course</h2>
 <p>Many research studies in Nepal still collect data on paper and enter it manually into Excel or SPSS afterwards. This course shows you how to replace that process with <strong>digital data collection</strong>: you design your questionnaire once in an Excel file (an <strong>XLSForm</strong>), upload it to <strong>KoboToolbox</strong>, and collect data on a phone, tablet or web browser. <span class="highlight"><strong>Data arrive clean, coded and ready for analysis.</strong></span></p>
-<p>This <strong>self-paced course</strong> covers <strong>basic to semi-advanced skills</strong>. You can work through every module on this website to practice together and build your own research questionnaire in XLSForm. You will then <strong>upload it to KoboToolbox</strong> to collect data.</p>
+<p>This <strong>self-paced course</strong> covers <strong>basic to semi-advanced skills</strong>. You can work through every module on this website and join the in-person session to practise together and build your own research questionnaire in XLSForm. You will then <strong>upload it to KoboToolbox</strong> to collect data.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -279,32 +321,81 @@ ul.task-list li input[type="checkbox"] {
 <p>This course is for students, beginner researchers, survey tool developers, and anyone who wants to move from paper questionnaires to digital data collection. The examples use health-related data. No programming knowledge is needed; basic computer and Excel skills are enough.</p>
 </div>
 </div>
-<section id="learning-outcomes" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="learning-outcomes">Learning outcomes</h2>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h2>
 <p>By the end of this course, you will be able to:</p>
 <ol type="1">
 <li>Choose the correct question type (integer, decimal, single choice, multiple choice, date/time, text, note, etc.) for each research variable.</li>
-<li>Explain the sheets of an XLSForm (survey, choices, and settings) and create an XLSForm with a bilingual (English and Nepali) setup.</li>
+<li>Explain the sheets of an XLSForm (<code>survey</code>, <code>choices</code>, and <code>settings</code>) and create an XLSForm with a bilingual (English and Nepali) setup.</li>
 <li>Convert your own questionnaire into an XLSForm, including required questions, groups, skip logic, and constraints.</li>
 <li>Create a KoboToolbox account, upload and deploy an XLSForm, and collect test data.</li>
-<li>Build and edit a survey directly in the KoboToolbox Formbuilder.</li>
 <li>Download the KoboCollect app on a mobile device, link it to your KoboToolbox account, and use it to collect data offline and submit it to the server.</li>
+<li>Build and edit a survey directly in the KoboToolbox Formbuilder.</li>
 <li>Download collected data from the KoboToolbox server in Excel, CSV, or SPSS format for analysis.</li>
 </ol>
 </section>
-<section id="before-you-start" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="before-you-start">Before you start</h2>
+<section id="course-modules" class="level2">
+<h2 class="anchored" data-anchor-id="course-modules">Course modules</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Module</th>
+<th style="text-align: left;">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><a href="./01-question-types.html">Types of survey questions</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><a href="./02-xlsform-intro.html">Introduction to XLSForm</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><a href="./03-question-features.html">Question features in XLSForm</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><a href="./04-xlsform-development.html">XLSForm development with your own questionnaire</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><a href="./05-kobo-account.html">Create your KoboToolbox account</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><a href="./06-kobo-upload.html">Uploading XLSForm into KoboToolbox</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><a href="./07-kobocollect-mobile-app.html">Collecting data with the KoboCollect mobile app</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><a href="./08-formbuilder.html">Developing survey questions in the Kobo Formbuilder</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><a href="./09-download-data.html">Downloading your data from KoboToolbox</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="before-you-start" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-start">Before you start</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">A laptop with Microsoft Excel, LibreOffice Calc or Google Sheets</label></li>
 <li><label><input type="checkbox">A smartphone with internet access</label></li>
-<li><label><input type="checkbox">The <strong>KoboCollect</strong> app installed on an Android phone (see <a href="./07-kobocollect.html">Module 7</a>). iPhone users can use the web form instead.</label></li>
 <li><label><input type="checkbox">A KoboToolbox account (see <a href="./05-kobo-account.html">Module 5</a>)</label></li>
+<li><label><input type="checkbox">The <strong>KoboCollect</strong> app installed on an Android phone (see <a href="./07-kobocollect-mobile-app.html">Module 7</a>). iPhone users can use the web form instead.</label></li>
 <li><label><input type="checkbox">A copy of your research/thesis questionnaire (Word or PDF)</label></li>
 <li><label><input type="checkbox">Download the course template: <a href="templates/msn_xlsform_template.xlsx">msn_xlsform_template.xlsx</a>, an example template to start your own form</label></li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -381,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/dineshtgithub\.github\.io\/kobo-course\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -724,7 +815,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Digital Data Collection with XLSForm and KoboToolbox</p>
+<p>From Paper to Digital: Survey Data Collection with KoboToolbox</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

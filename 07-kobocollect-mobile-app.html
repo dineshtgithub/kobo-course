@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 7: Collecting data with the KoboCollect mobile app – Kobo &amp; XLSForm Course</title>
+<title>Module 7: Collecting data with the KoboCollect mobile app – From Paper to Digital</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -47,7 +47,10 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f1b8ffe018e27b3e49848c173bc17ec4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c08d3273e37e7f5e3c9409009cd7f4c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,6 +79,43 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<style>
+  /* green: change these two values to recolour the whole site */
+  :root {
+    --course-color: #00883A;        /* green */
+    --course-color-light: #E6F3EB;  /* light green shade */
+  }
+
+  /* Page title and subtitle */
+  body .quarto-title .title,
+  body .quarto-title .subtitle {
+    color: var(--course-color);
+  }
+
+  /* All headings (#, ##, ###, ...) */
+  body h1, body h2, body h3,
+  body h4, body h5, body h6 {
+    color: var(--course-color);
+  }
+
+  /* Highlighted text: [text]{.highlight} */
+  .highlight {
+    color: var(--course-color);
+    font-weight: bold;
+  }
+
+  /* Note callouts: green border, light green header, green icon */
+  body div.callout-note.callout {
+    border-left-color: var(--course-color) !important;
+  }
+  body div.callout-note .callout-header,
+  body div.callout-note .callout-title {
+    background-color: var(--course-color-light) !important;
+  }
+  body div.callout-note .callout-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300883A' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3E%3Cpath d='m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'/%3E%3C/svg%3E") !important;
+  }
+</style>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -89,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Kobo &amp; XLSForm Course</span>
+    <span class="navbar-title">From Paper to Digital</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -117,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-question-types.html">Modules</a></li><li class="breadcrumb-item"><a href="./07-kobocollect.html">7. KoboCollect mobile app</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-question-types.html">Modules</a></li><li class="breadcrumb-item"><a href="./07-kobocollect-mobile-app.html">7. KoboCollect mobile app</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -185,12 +225,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-kobo-upload.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Interface and uploading</span></a>
+ <span class="menu-text">6. Uploading XLSForm into KoboToolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-kobocollect.html" class="sidebar-item-text sidebar-link active">
+  <a href="./07-kobocollect-mobile-app.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">7. KoboCollect mobile app</span></a>
   </div>
 </li>
@@ -198,6 +238,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./08-formbuilder.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Kobo Formbuilder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-download-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Downloading your data</span></a>
   </div>
 </li>
       </ul>
@@ -224,6 +270,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#step-4-fill-in-the-form" id="toc-step-4-fill-in-the-form" class="nav-link" data-scroll-target="#step-4-fill-in-the-form">Step 4: Fill in the form</a></li>
   <li><a href="#step-5-send-data-to-the-server" id="toc-step-5-send-data-to-the-server" class="nav-link" data-scroll-target="#step-5-send-data-to-the-server">Step 5: Send data to the server</a></li>
   <li><a href="#step-6-update-the-form-after-changes" id="toc-step-6-update-the-form-after-changes" class="nav-link" data-scroll-target="#step-6-update-the-form-after-changes">Step 6: Update the form after changes</a></li>
+  <li><a href="#working-with-more-than-one-project" id="toc-working-with-more-than-one-project" class="nav-link" data-scroll-target="#working-with-more-than-one-project">Working with more than one project</a></li>
   <li><a href="#using-an-iphone" id="toc-using-an-iphone" class="nav-link" data-scroll-target="#using-an-iphone">Using an iPhone?</a></li>
   <li><a href="#good-practice-in-the-field" id="toc-good-practice-in-the-field" class="nav-link" data-scroll-target="#good-practice-in-the-field">Good practice in the field</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
@@ -233,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-question-types.html">Modules</a></li><li class="breadcrumb-item"><a href="./07-kobocollect.html">7. KoboCollect mobile app</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-question-types.html">Modules</a></li><li class="breadcrumb-item"><a href="./07-kobocollect-mobile-app.html">7. KoboCollect mobile app</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Module 7: Collecting data with the KoboCollect mobile app</h1>
 </div>
@@ -252,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>KoboCollect</strong> is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works <strong>offline</strong>: you can interview participants in places without internet, and send the data to the server later.</p>
+<p><strong>KoboCollect</strong> <img src="images/kobocollect-logo.png" class="nolightbox" style="vertical-align: middle;;height:1.5em"> is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works <strong>offline</strong>: you can interview participants in places without internet, and send the data to the server later.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -283,33 +330,65 @@ ul.task-list li input[type="checkbox"] {
 <section id="step-2-connect-the-app-to-your-kobotoolbox-account" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-connect-the-app-to-your-kobotoolbox-account">Step 2: Connect the app to your KoboToolbox account</h2>
 <ol type="1">
-<li><p>When the app opens for the first time, choose <strong>Manually enter project details</strong>.</p></li>
-<li><p>Enter the server URL:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Your account is on</th>
-<th style="text-align: left;">Server URL for KoboCollect</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Global server (kf.kobotoolbox.org)</td>
-<td style="text-align: left;"><code>https://kc.kobotoolbox.org</code></td>
-</tr>
-</tbody>
-</table></li>
-<li><p>Enter your KoboToolbox <strong>username</strong> and <strong>password</strong>.</p></li>
-<li><p>Save the settings. The app’s main menu appears.</p></li>
+<li><p>On your computer, log in to KoboToolbox and open your deployed project.</p></li>
+<li><p>In the <strong>Form</strong> tab, open the <strong>Collect data</strong> drop-down list, scroll down to the end, and choose <strong>Android application</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/android_application.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Choosing “Android application” in the Form tab"><img src="images/android_application.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Choosing “Android application” in the Form tab"></a></p>
+</figure>
+</div>
+<figcaption>Choosing “Android application” in the Form tab</figcaption>
+</figure>
+</div></li>
+<li><p>The instructions that appear show the <strong>KoboCollect URL</strong>. Note it down. For the Global server it is <code>https://kc.kobotoolbox.org</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/kobocollect-url-web.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="The KoboCollect URL in the instructions"><img src="images/kobocollect-url-web.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="The KoboCollect URL in the instructions"></a></p>
+</figure>
+</div>
+<figcaption>The KoboCollect URL in the instructions</figcaption>
+</figure>
+</div></li>
+<li><p>On your phone, open KoboCollect and choose <strong>Manually enter project details</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/manual_enter_project.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Choosing “Manually enter project details” in KoboCollect"><img src="images/manual_enter_project.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Choosing “Manually enter project details” in KoboCollect"></a></p>
+</figure>
+</div>
+<figcaption>Choosing “Manually enter project details” in KoboCollect</figcaption>
+</figure>
+</div></li>
+<li><p>On the <strong>Add project</strong> screen, fill in the three fields:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/add_project.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="The Add project screen in KoboCollect"><img src="images/add_project.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="The Add project screen in KoboCollect"></a></p>
+</figure>
+</div>
+<figcaption>The Add project screen in KoboCollect</figcaption>
+</figure>
+</div>
+<ul>
+<li><strong>URL:</strong> enter <code>https://kc.kobotoolbox.org</code>. It may already be filled in. The address starts with <strong>kc</strong> (the data collection server), not <strong>kf</strong> (the website you log in to on your computer). KoboCollect only works with the <strong>kc</strong> address.</li>
+<li><strong>Username:</strong> your KoboToolbox username, the same one you use on the website. Type it in lowercase, without spaces.</li>
+<li><strong>Password:</strong> your KoboToolbox password.</li>
+</ul>
+<p>Then tap <strong>Add</strong>. The app connects to your account and the main menu appears.</p></li>
 </ol>
-<!-- ![Entering the server details](images/kobocollect-02-server.png){width=40% fig-align="center"} -->
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+<span class="screen-reader-only">Warning</span>Server address: kc, not kf
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -320,20 +399,69 @@ Warning
 <section id="step-3-download-your-form-to-the-phone" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-download-your-form-to-the-phone">Step 3: Download your form to the phone</h2>
 <ol type="1">
-<li>In the main menu, tap <strong>Download form</strong>.</li>
-<li>Tick the form you deployed in KoboToolbox.</li>
-<li>Tap <strong>Get selected</strong>.</li>
+<li><p>In the main menu, tap <strong>Download form</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/download_form.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="The main menu with the Download form button"><img src="images/download_form.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="The main menu with the Download form button"></a></p>
+</figure>
+</div>
+<figcaption>The main menu with the Download form button</figcaption>
+</figure>
+</div></li>
+<li><p>Tick the form you deployed in KoboToolbox.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/get_selected.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Ticking and selecting the deployed form"><img src="images/get_selected.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Ticking and selecting the deployed form"></a></p>
+</figure>
+</div>
+<figcaption>Ticking and selecting the deployed form</figcaption>
+</figure>
+</div></li>
+<li><p>Tap <strong>Get selected</strong> at the bottom right of the screen.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/get_selected.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Ticking and selecting the deployed form"><img src="images/get_selected.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Ticking and selecting the deployed form"></a></p>
+</figure>
+</div>
+<figcaption>Ticking and selecting the deployed form</figcaption>
+</figure>
+</div></li>
 </ol>
 <p>If your form doesn’t appear, check that it is <strong>deployed</strong> (not only uploaded) in KoboToolbox, and that you entered the correct username and server.</p>
-<!-- ![Downloading the form](images/kobocollect-03-download.png){width=40% fig-align="center"} -->
 </section>
 <section id="step-4-fill-in-the-form" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-fill-in-the-form">Step 4: Fill in the form</h2>
 <ol type="1">
-<li>Tap <strong>Start new form</strong> and choose your form.</li>
-<li>Answer each question, and swipe left or tap <strong>Next</strong> to move forward.</li>
-<li>To switch between English and Nepali, open the <strong>⋮ menu</strong> at the top right and choose <strong>Change language</strong>.</li>
-<li>At the end of the form, choose:
+<li><p>Tap <strong>Start new form</strong> and choose your form.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/new_form.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Start new form"><img src="images/new_form.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Start new form"></a></p>
+</figure>
+</div>
+<figcaption>Start new form</figcaption>
+</figure>
+</div></li>
+<li><p>Answer each question, and swipe left or tap <strong>Next</strong> to move forward.</p></li>
+<li><p>To switch between English and Nepali, tap the <strong>⋮ menu</strong> at the top right and choose <strong>Change language</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/language_setting.jpeg" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Language setting"><img src="images/language_setting.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Language setting"></a></p>
+</figure>
+</div>
+<figcaption>Language setting</figcaption>
+</figure>
+</div></li>
+<li><p>At the end of the form, choose:</p>
 <ul>
 <li><strong>Finalize</strong>: the record is complete and ready to send.</li>
 <li><strong>Save as draft</strong>: you can open it later from <strong>Drafts</strong> and finish it.</li>
@@ -374,6 +502,15 @@ Tip
 <li>Start new interviews with the new version.</li>
 </ol>
 </section>
+<section id="working-with-more-than-one-project" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-more-than-one-project">Working with more than one project</h2>
+<p>KoboCollect can connect to several KoboToolbox accounts and projects, even on different servers, and switch between them.</p>
+<ol type="1">
+<li>Tap the <strong>Project icon</strong> at the top right of the main menu.</li>
+<li>Tap <strong>Add project</strong>, and set it up as in Step 2.</li>
+<li>To switch projects, tap the Project icon and choose the project. The active project is listed first.</li>
+</ol>
+</section>
 <section id="using-an-iphone" class="level2">
 <h2 class="anchored" data-anchor-id="using-an-iphone">Using an iPhone?</h2>
 <p>KoboCollect is only available for Android. On an iPhone, iPad or computer, use the <strong>web form</strong> instead:</p>
@@ -398,7 +535,7 @@ Tip
 <h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">KoboCollect installed on an Android phone</label></li>
-<li><label><input type="checkbox">App connected to the correct server (<code>kc…</code>) with my username</label></li>
+<li><label><input type="checkbox">App connected to my account with the <code>kc…</code> server URL</label></li>
 <li><label><input type="checkbox">My form downloaded to the phone</label></li>
 <li><label><input type="checkbox">At least one test record filled in, including a language switch</label></li>
 <li><label><input type="checkbox">Test record sent and visible in the KoboToolbox <strong>Data</strong> tab</label></li>
@@ -481,7 +618,7 @@ Tip
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/dineshtgithub\.github\.io\/kobo-course\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -810,8 +947,8 @@ Tip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06-kobo-upload.html" class="pagination-link" aria-label="6. Interface and uploading">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6. Interface and uploading</span>
+      <a href="./06-kobo-upload.html" class="pagination-link" aria-label="6. Uploading XLSForm into KoboToolbox">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">6. Uploading XLSForm into KoboToolbox</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -827,13 +964,45 @@ Tip
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Digital Data Collection with XLSForm and KoboToolbox</p>
+<p>From Paper to Digital: Survey Data Collection with KoboToolbox</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

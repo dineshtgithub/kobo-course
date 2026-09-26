@@ -1,5 +1,111 @@
 [
   {
+    "objectID": "04-xlsform-development.html",
+    "href": "04-xlsform-development.html",
+    "title": "Module 4: XLSForm development with your research questions",
+    "section": "",
+    "text": "Now build your own form. Work from your approved thesis questionnaire.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "4. XLSForm development"
+    ]
+  },
+  {
+    "objectID": "04-xlsform-development.html#step-by-step",
+    "href": "04-xlsform-development.html#step-by-step",
+    "title": "Module 4: XLSForm development with your research questions",
+    "section": "Step-by-step",
+    "text": "Step-by-step\n\nCopy msn_xlsform_template.xlsx and rename it, e.g. lastname_survey_v1.xlsx. Keep the four metadata rows (start, end, today, deviceid) and replace the example rows with your own questions and answer options.\nSettings sheet: write your form title (e.g. Dinesh HTN Research).\nConsent first: add an introduction note and a required select_one yes_no consent question. Put the rest of the form in groups with relevant = ${consent} = 'yes'.\nOne group per section of your questionnaire (Section A, B, C …).\nFor each question, decide the type (use the Module 1 summary table), give it a short name, and copy the English label.\nAdd answer lists in choices. Reuse lists (e.g. one yes_no list for all yes/no questions).\nAdd rules: required, relevant for skip patterns, constraint for ranges.\nAdd Nepali labels in label::Nepali (ne) if you will interview in Nepali.\nSave and upload it in Module 6 to test.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "4. XLSForm development"
+    ]
+  },
+  {
+    "objectID": "04-xlsform-development.html#naming-conventions",
+    "href": "04-xlsform-development.html#naming-conventions",
+    "title": "Module 4: XLSForm development with your research questions",
+    "section": "Naming conventions",
+    "text": "Naming conventions\n\n\n\nGood name\nBad name\nWhy\n\n\n\n\nage\nAge of respondent\nNo spaces\n\n\nq12_knowledge\n12_knowledge\nMust start with a letter\n\n\nhb_level\nhb-level\nUse _, not -\n\n\nanc_visits\nx1\nShould be meaningful",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "4. XLSForm development"
+    ]
+  },
+  {
+    "objectID": "04-xlsform-development.html#checklist-before-upload",
+    "href": "04-xlsform-development.html#checklist-before-upload",
+    "title": "Module 4: XLSForm development with your research questions",
+    "section": "Checklist before upload",
+    "text": "Checklist before upload\n\nSheet names are exactly survey, choices, settings\nEvery name is unique with no spaces\nEvery select_one / select_multiple list exists in choices\nEvery begin_group has an end_group\nText values in relevant/constraint are in single quotes\nLanguage column names are spelled identically everywhere\nversion increased if you changed the form\n\n\n\n\n\n\n\nNoteAssignment\n\n\n\nSubmit your XLSForm (.xlsx) covering at least one full section of your thesis questionnaire, including at least one skip rule, one constraint, and (if applicable) a Likert scale.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "4. XLSForm development"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "KoboToolbox Help Center: https://support.kobotoolbox.org\nXLSForm reference: https://xlsform.org\nParticify: https://particify.de\nKoboToolbox community forum: https://community.kobotoolbox.org",
+    "crumbs": [
+      "Home",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "resources.html#course-files",
+    "href": "resources.html#course-files",
+    "title": "Resources",
+    "section": "Course files",
+    "text": "Course files\n\nXLSForm template with bilingual worked example\n\n\nThis course material is shared for educational use. Please cite the course page if you adapt it.",
+    "crumbs": [
+      "Home",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "08-formbuilder.html",
+    "href": "08-formbuilder.html",
+    "title": "Module 8: Developing survey questions in the Kobo Formbuilder",
+    "section": "",
+    "text": "KoboToolbox also has a point-and-click Formbuilder. It is useful for small forms and quick edits. XLSForm is better for long, bilingual research questionnaires, but it helps to know both.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "8. Kobo Formbuilder"
+    ]
+  },
+  {
+    "objectID": "08-formbuilder.html#build-a-form-from-scratch",
+    "href": "08-formbuilder.html#build-a-form-from-scratch",
+    "title": "Module 8: Developing survey questions in the Kobo Formbuilder",
+    "section": "Build a form from scratch",
+    "text": "Build a form from scratch\n\nNEW → Build from scratch → enter project details → Create project.\n\n\n\n\nChoose “Build from scratch”\n\n\n\nEnter your project details: Project name, and optionally a Description and Sector. Then click Create project.\nClick + to add a question, type the question text, and choose the type (Select One, Select Many, Text, Number, Decimal, Date, Time, Note, Rating …).\nFor choice questions, type each option. Click + to add more options.\nClick the gear icon (Settings) on a question to set:\n\nMandatory response (required)\nSkip logic (relevant): choose the earlier question and condition\nValidation criteria (constraint) and the error message\nAppearance and hint\n\nSelect several questions and click Group to create a section.\nUse Manage translations to add Nepali labels.\nSave, Preview, then Deploy.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "8. Kobo Formbuilder"
+    ]
+  },
+  {
+    "objectID": "08-formbuilder.html#formbuilder-and-xlsform-together",
+    "href": "08-formbuilder.html#formbuilder-and-xlsform-together",
+    "title": "Module 8: Developing survey questions in the Kobo Formbuilder",
+    "section": "Formbuilder and XLSForm together",
+    "text": "Formbuilder and XLSForm together\n\nDownload any Formbuilder project as XLS (Form tab → ⋯ → Download XLS). This is a good way to learn XLSForm syntax: build a question in the Formbuilder, download, and see how it is written.\nYou can upload an XLSForm and then make small edits in the Formbuilder.\n\n\n\n\n\n\n\nNotePractice\n\n\n\nRebuild the Section C Likert scale from the example file in the Formbuilder using the Rating question type, then download it as XLS and compare it with the XLSForm version.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "8. Kobo Formbuilder"
+    ]
+  },
+  {
     "objectID": "01-question-types.html",
     "href": "01-question-types.html",
     "title": "Module 1: Types of survey questions",
@@ -144,71 +250,11 @@
     ]
   },
   {
-    "objectID": "06-kobo-upload.html",
-    "href": "06-kobo-upload.html",
-    "title": "Module 6: KoboToolbox interface and uploading your XLSForm",
-    "section": "",
-    "text": "Click NEW → Upload an XLSForm.\nChoose your .xlsx file and click Upload. \nFill in project details (name, description, sector: Health, country: Nepal) → Create project.\nIf you see an error, read it carefully: it usually names the row and the problem (see the table below). Fix the Excel file and upload again via Replace form.\nClick the eye icon (Preview) to test the form in your browser. Check skip logic, constraints and the language switch.\nClick Deploy.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "6. Interface and uploading"
-    ]
-  },
-  {
-    "objectID": "06-kobo-upload.html#upload-and-deploy-your-xlsform",
-    "href": "06-kobo-upload.html#upload-and-deploy-your-xlsform",
-    "title": "Module 6: KoboToolbox interface and uploading your XLSForm",
-    "section": "",
-    "text": "Click NEW → Upload an XLSForm.\nChoose your .xlsx file and click Upload. \nFill in project details (name, description, sector: Health, country: Nepal) → Create project.\nIf you see an error, read it carefully: it usually names the row and the problem (see the table below). Fix the Excel file and upload again via Replace form.\nClick the eye icon (Preview) to test the form in your browser. Check skip logic, constraints and the language switch.\nClick Deploy.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "6. Interface and uploading"
-    ]
-  },
-  {
-    "objectID": "06-kobo-upload.html#collect-test-data",
-    "href": "06-kobo-upload.html#collect-test-data",
-    "title": "Module 6: KoboToolbox interface and uploading your XLSForm",
-    "section": "Collect test data",
-    "text": "Collect test data\n\nWeb form: in the Form tab, open the Collect data section and choose the online-offline web form link. Open it on any browser or share it.\nKoboCollect app (Android): install KoboCollect from the Play Store → configure the server with your server URL and username → Download form → Start new form. KoboCollect works offline in the field; send submissions when you are back online.\nSubmit 3 to 5 test records, including wrong values, to check your constraints.\nIn the Data tab, view the table and download the data as Excel. Check that each column is correct.\n\n\n\n\n\n\n\nWarning\n\n\n\nDelete all test submissions before you start real data collection.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "6. Interface and uploading"
-    ]
-  },
-  {
-    "objectID": "06-kobo-upload.html#common-upload-errors",
-    "href": "06-kobo-upload.html#common-upload-errors",
-    "title": "Module 6: KoboToolbox interface and uploading your XLSForm",
-    "section": "Common upload errors",
-    "text": "Common upload errors\n\n\n\n\n\n\n\n\nError message contains\nLikely cause\nFix\n\n\n\n\n“list name not in choices sheet”\nTypo between select_one xyz and list_name\nMake both names identical\n\n\n“unmatched begin statement”\nMissing end_group\nAdd end_group\n\n\n“duplicate name”\nTwo rows with the same name\nRename one\n\n\n“invalid name”\nSpace or symbol in name\nUse letters, numbers and _ only\n\n\nError in relevant / constraint\nMissing quotes, wrong ${name}\nCheck spelling and quotes",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "6. Interface and uploading"
-    ]
-  },
-  {
-    "objectID": "06-kobo-upload.html#ethics-and-data-protection",
-    "href": "06-kobo-upload.html#ethics-and-data-protection",
-    "title": "Module 6: KoboToolbox interface and uploading your XLSForm",
-    "section": "Ethics and data protection",
-    "text": "Ethics and data protection\n\nCollect only what your approved protocol needs. Avoid names and phone numbers unless required.\nShare projects with your supervisor through Settings → Sharing rather than sharing your password.\nDownload and store data on a password-protected device.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "6. Interface and uploading"
-    ]
-  },
-  {
-    "objectID": "07-kobocollect.html",
-    "href": "07-kobocollect.html",
+    "objectID": "07-kobocollect-mobile-app.html",
+    "href": "07-kobocollect-mobile-app.html",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "",
-    "text": "KoboCollect is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works offline: you can interview participants in places without internet, and send the data to the server later.",
+    "text": "KoboCollect  is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works offline: you can interview participants in places without internet, and send the data to the server later.",
     "crumbs": [
       "Home",
       "Modules",
@@ -216,8 +262,8 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#step-1-install-kobocollect",
-    "href": "07-kobocollect.html#step-1-install-kobocollect",
+    "objectID": "07-kobocollect-mobile-app.html#step-1-install-kobocollect",
+    "href": "07-kobocollect-mobile-app.html#step-1-install-kobocollect",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Step 1: Install KoboCollect",
     "text": "Step 1: Install KoboCollect\n\nOpen the Google Play Store on your Android phone.\nSearch for KoboCollect and install the app published by KoboToolbox.\nOpen the app.",
@@ -228,11 +274,11 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#step-2-connect-the-app-to-your-kobotoolbox-account",
-    "href": "07-kobocollect.html#step-2-connect-the-app-to-your-kobotoolbox-account",
+    "objectID": "07-kobocollect-mobile-app.html#step-2-connect-the-app-to-your-kobotoolbox-account",
+    "href": "07-kobocollect-mobile-app.html#step-2-connect-the-app-to-your-kobotoolbox-account",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Step 2: Connect the app to your KoboToolbox account",
-    "text": "Step 2: Connect the app to your KoboToolbox account\n\nWhen the app opens for the first time, choose Manually enter project details.\nEnter the server URL:\n\n\n\nYour account is on\nServer URL for KoboCollect\n\n\n\n\nGlobal server (kf.kobotoolbox.org)\nhttps://kc.kobotoolbox.org\n\n\n\nEnter your KoboToolbox username and password.\nSave the settings. The app’s main menu appears.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThe server URL for KoboCollect starts with kc, not kf. Using kf.kobotoolbox.org (the website address) is the most common setup mistake.",
+    "text": "Step 2: Connect the app to your KoboToolbox account\n\nOn your computer, log in to KoboToolbox and open your deployed project.\nIn the Form tab, open the Collect data drop-down list, scroll down to the end, and choose Android application.\n\n\n\n\n\n\n\nChoosing “Android application” in the Form tab\n\n\nThe instructions that appear show the KoboCollect URL. Note it down. For the Global server it is https://kc.kobotoolbox.org.\n\n\n\n\n\n\n\nThe KoboCollect URL in the instructions\n\n\nOn your phone, open KoboCollect and choose Manually enter project details.\n\n\n\n\n\n\n\nChoosing “Manually enter project details” in KoboCollect\n\n\nOn the Add project screen, fill in the three fields:\n\n\n\n\n\n\n\nThe Add project screen in KoboCollect\n\n\n\nURL: enter https://kc.kobotoolbox.org. It may already be filled in. The address starts with kc (the data collection server), not kf (the website you log in to on your computer). KoboCollect only works with the kc address.\nUsername: your KoboToolbox username, the same one you use on the website. Type it in lowercase, without spaces.\nPassword: your KoboToolbox password.\n\nThen tap Add. The app connects to your account and the main menu appears.\n\n\n\n\n\n\n\nWarningServer address: kc, not kf\n\n\n\nThe server URL for KoboCollect starts with kc, not kf. Using kf.kobotoolbox.org (the website address) is the most common setup mistake.",
     "crumbs": [
       "Home",
       "Modules",
@@ -240,11 +286,11 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#step-3-download-your-form-to-the-phone",
-    "href": "07-kobocollect.html#step-3-download-your-form-to-the-phone",
+    "objectID": "07-kobocollect-mobile-app.html#step-3-download-your-form-to-the-phone",
+    "href": "07-kobocollect-mobile-app.html#step-3-download-your-form-to-the-phone",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Step 3: Download your form to the phone",
-    "text": "Step 3: Download your form to the phone\n\nIn the main menu, tap Download form.\nTick the form you deployed in KoboToolbox.\nTap Get selected.\n\nIf your form doesn’t appear, check that it is deployed (not only uploaded) in KoboToolbox, and that you entered the correct username and server.",
+    "text": "Step 3: Download your form to the phone\n\nIn the main menu, tap Download form.\n\n\n\n\n\n\n\nThe main menu with the Download form button\n\n\nTick the form you deployed in KoboToolbox.\n\n\n\n\n\n\n\nTicking and selecting the deployed form\n\n\nTap Get selected at the bottom right of the screen.\n\n\n\n\n\n\n\nTicking and selecting the deployed form\n\n\n\nIf your form doesn’t appear, check that it is deployed (not only uploaded) in KoboToolbox, and that you entered the correct username and server.",
     "crumbs": [
       "Home",
       "Modules",
@@ -252,11 +298,11 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#step-4-fill-in-the-form",
-    "href": "07-kobocollect.html#step-4-fill-in-the-form",
+    "objectID": "07-kobocollect-mobile-app.html#step-4-fill-in-the-form",
+    "href": "07-kobocollect-mobile-app.html#step-4-fill-in-the-form",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Step 4: Fill in the form",
-    "text": "Step 4: Fill in the form\n\nTap Start new form and choose your form.\nAnswer each question, and swipe left or tap Next to move forward.\nTo switch between English and Nepali, open the ⋮ menu at the top right and choose Change language.\nAt the end of the form, choose:\n\nFinalize: the record is complete and ready to send.\nSave as draft: you can open it later from Drafts and finish it.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nFilling in forms does not need internet. You can complete many interviews offline during the day and send them all at once.",
+    "text": "Step 4: Fill in the form\n\nTap Start new form and choose your form.\n\n\n\n\n\n\n\nStart new form\n\n\nAnswer each question, and swipe left or tap Next to move forward.\nTo switch between English and Nepali, tap the ⋮ menu at the top right and choose Change language.\n\n\n\n\n\n\n\nLanguage setting\n\n\nAt the end of the form, choose:\n\nFinalize: the record is complete and ready to send.\nSave as draft: you can open it later from Drafts and finish it.\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nFilling in forms does not need internet. You can complete many interviews offline during the day and send them all at once.",
     "crumbs": [
       "Home",
       "Modules",
@@ -264,8 +310,8 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#step-5-send-data-to-the-server",
-    "href": "07-kobocollect.html#step-5-send-data-to-the-server",
+    "objectID": "07-kobocollect-mobile-app.html#step-5-send-data-to-the-server",
+    "href": "07-kobocollect-mobile-app.html#step-5-send-data-to-the-server",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Step 5: Send data to the server",
     "text": "Step 5: Send data to the server\n\nWhen you have internet, tap Ready to send in the main menu.\nSelect the records you want to send, or tap Select all.\nTap Send selected.\nSent records move to Sent. Check that they appear in the Data tab of your project in KoboToolbox.\n\n\nTo send records automatically whenever the phone is online, turn on Auto send in the app settings (under Form management).",
@@ -276,8 +322,8 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#step-6-update-the-form-after-changes",
-    "href": "07-kobocollect.html#step-6-update-the-form-after-changes",
+    "objectID": "07-kobocollect-mobile-app.html#step-6-update-the-form-after-changes",
+    "href": "07-kobocollect-mobile-app.html#step-6-update-the-form-after-changes",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Step 6: Update the form after changes",
     "text": "Step 6: Update the form after changes\nIf you change your XLSForm and redeploy it in KoboToolbox, the phone still has the old version.\n\nSend all finalized records first.\nTap Download form again and select the updated form.\nStart new interviews with the new version.",
@@ -288,8 +334,20 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#using-an-iphone",
-    "href": "07-kobocollect.html#using-an-iphone",
+    "objectID": "07-kobocollect-mobile-app.html#working-with-more-than-one-project",
+    "href": "07-kobocollect-mobile-app.html#working-with-more-than-one-project",
+    "title": "Module 7: Collecting data with the KoboCollect mobile app",
+    "section": "Working with more than one project",
+    "text": "Working with more than one project\nKoboCollect can connect to several KoboToolbox accounts and projects, even on different servers, and switch between them.\n\nTap the Project icon at the top right of the main menu.\nTap Add project, and set it up as in Step 2.\nTo switch projects, tap the Project icon and choose the project. The active project is listed first.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "7. KoboCollect mobile app"
+    ]
+  },
+  {
+    "objectID": "07-kobocollect-mobile-app.html#using-an-iphone",
+    "href": "07-kobocollect-mobile-app.html#using-an-iphone",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Using an iPhone?",
     "text": "Using an iPhone?\nKoboCollect is only available for Android. On an iPhone, iPad or computer, use the web form instead:\n\nIn KoboToolbox, open your project’s Form tab and find the Collect data section.\nChoose the online-offline web form option and copy the link.\nOpen the link in the browser and add it to the home screen.\n\nThe online-offline web form can also be filled in without internet once it has been opened, and it sends the data when the connection returns.",
@@ -300,8 +358,8 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#good-practice-in-the-field",
-    "href": "07-kobocollect.html#good-practice-in-the-field",
+    "objectID": "07-kobocollect-mobile-app.html#good-practice-in-the-field",
+    "href": "07-kobocollect-mobile-app.html#good-practice-in-the-field",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Good practice in the field",
     "text": "Good practice in the field\n\nTest before the field: fill in and send 3 to 5 test records, then check them in KoboToolbox. Delete the test records before real data collection.\nSend data every day when possible. Records on the phone can be lost if it is damaged, stolen or reset.\nNever uninstall KoboCollect or clear its data while records are still waiting in Drafts or Ready to send.\nProtect the phone with a screen lock, since it contains participants’ data.\nCarry a charger or power bank; long field days drain the battery.",
@@ -312,15 +370,142 @@
     ]
   },
   {
-    "objectID": "07-kobocollect.html#checklist",
-    "href": "07-kobocollect.html#checklist",
+    "objectID": "07-kobocollect-mobile-app.html#checklist",
+    "href": "07-kobocollect-mobile-app.html#checklist",
     "title": "Module 7: Collecting data with the KoboCollect mobile app",
     "section": "Checklist",
-    "text": "Checklist\n\nKoboCollect installed on an Android phone\nApp connected to the correct server (kc…) with my username\nMy form downloaded to the phone\nAt least one test record filled in, including a language switch\nTest record sent and visible in the KoboToolbox Data tab",
+    "text": "Checklist\n\nKoboCollect installed on an Android phone\nApp connected to my account with the kc… server URL\nMy form downloaded to the phone\nAt least one test record filled in, including a language switch\nTest record sent and visible in the KoboToolbox Data tab",
     "crumbs": [
       "Home",
       "Modules",
       "7. KoboCollect mobile app"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "From Paper to Digital: Survey Data Collection with KoboToolbox",
+    "section": "",
+    "text": "Many research studies in Nepal still collect data on paper and enter it manually into Excel or SPSS afterwards. This course shows you how to replace that process with digital data collection: you design your questionnaire once in an Excel file (an XLSForm), upload it to KoboToolbox, and collect data on a phone, tablet or web browser. Data arrive clean, coded and ready for analysis.\nThis self-paced course covers basic to semi-advanced skills. You can work through every module on this website and join the in-person session to practise together and build your own research questionnaire in XLSForm. You will then upload it to KoboToolbox to collect data.\n\n\n\n\n\n\nNoteWho is this course for?\n\n\n\nThis course is for students, beginner researchers, survey tool developers, and anyone who wants to move from paper questionnaires to digital data collection. The examples use health-related data. No programming knowledge is needed; basic computer and Excel skills are enough.",
+    "crumbs": [
+      "Home",
+      "About this course"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "From Paper to Digital: Survey Data Collection with KoboToolbox",
+    "section": "",
+    "text": "Many research studies in Nepal still collect data on paper and enter it manually into Excel or SPSS afterwards. This course shows you how to replace that process with digital data collection: you design your questionnaire once in an Excel file (an XLSForm), upload it to KoboToolbox, and collect data on a phone, tablet or web browser. Data arrive clean, coded and ready for analysis.\nThis self-paced course covers basic to semi-advanced skills. You can work through every module on this website and join the in-person session to practise together and build your own research questionnaire in XLSForm. You will then upload it to KoboToolbox to collect data.\n\n\n\n\n\n\nNoteWho is this course for?\n\n\n\nThis course is for students, beginner researchers, survey tool developers, and anyone who wants to move from paper questionnaires to digital data collection. The examples use health-related data. No programming knowledge is needed; basic computer and Excel skills are enough.",
+    "crumbs": [
+      "Home",
+      "About this course"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "From Paper to Digital: Survey Data Collection with KoboToolbox",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\nBy the end of this course, you will be able to:\n\nChoose the correct question type (integer, decimal, single choice, multiple choice, date/time, text, note, etc.) for each research variable.\nExplain the sheets of an XLSForm (survey, choices, and settings) and create an XLSForm with a bilingual (English and Nepali) setup.\nConvert your own questionnaire into an XLSForm, including required questions, groups, skip logic, and constraints.\nCreate a KoboToolbox account, upload and deploy an XLSForm, and collect test data.\nDownload the KoboCollect app on a mobile device, link it to your KoboToolbox account, and use it to collect data offline and submit it to the server.\nBuild and edit a survey directly in the KoboToolbox Formbuilder.\nDownload collected data from the KoboToolbox server in Excel, CSV, or SPSS format for analysis.",
+    "crumbs": [
+      "Home",
+      "About this course"
+    ]
+  },
+  {
+    "objectID": "index.html#course-modules",
+    "href": "index.html#course-modules",
+    "title": "From Paper to Digital: Survey Data Collection with KoboToolbox",
+    "section": "Course modules",
+    "text": "Course modules\n\n\n\nModule\nTopic\n\n\n\n\n1\nTypes of survey questions\n\n\n2\nIntroduction to XLSForm\n\n\n3\nQuestion features in XLSForm\n\n\n4\nXLSForm development with your own questionnaire\n\n\n5\nCreate your KoboToolbox account\n\n\n6\nUploading XLSForm into KoboToolbox\n\n\n7\nCollecting data with the KoboCollect mobile app\n\n\n8\nDeveloping survey questions in the Kobo Formbuilder\n\n\n9\nDownloading your data from KoboToolbox",
+    "crumbs": [
+      "Home",
+      "About this course"
+    ]
+  },
+  {
+    "objectID": "index.html#before-you-start",
+    "href": "index.html#before-you-start",
+    "title": "From Paper to Digital: Survey Data Collection with KoboToolbox",
+    "section": "Before you start",
+    "text": "Before you start\n\nA laptop with Microsoft Excel, LibreOffice Calc or Google Sheets\nA smartphone with internet access\nA KoboToolbox account (see Module 5)\nThe KoboCollect app installed on an Android phone (see Module 7). iPhone users can use the web form instead.\nA copy of your research/thesis questionnaire (Word or PDF)\nDownload the course template: msn_xlsform_template.xlsx, an example template to start your own form",
+    "crumbs": [
+      "Home",
+      "About this course"
+    ]
+  },
+  {
+    "objectID": "06-kobo-upload.html",
+    "href": "06-kobo-upload.html",
+    "title": "Module 6: Uploading XLSForm into KoboToolbox",
+    "section": "",
+    "text": "In this module you will upload your XLSForm to KoboToolbox, deploy it, test it, and share it with respondents.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "6. Uploading XLSForm into KoboToolbox"
+    ]
+  },
+  {
+    "objectID": "06-kobo-upload.html#upload-and-deploy-your-xlsform",
+    "href": "06-kobo-upload.html#upload-and-deploy-your-xlsform",
+    "title": "Module 6: Uploading XLSForm into KoboToolbox",
+    "section": "Upload and deploy your XLSForm",
+    "text": "Upload and deploy your XLSForm\n\nBefore uploading, check your form in XLSForm Online and fix any errors it shows (see Module 3).\n\n\n\n\n\n\n\nChecking the form in XLSForm Online\n\n\nLog in to the KoboToolbox Global server at https://kf.kobotoolbox.org with your username and password. If you don’t have an account yet, create one first (see Module 5).\n\n\n\n\n\n\n\nLog in page\n\n\nClick NEW → Upload an XLSForm \nChoose your .xlsx file and click Upload.\n\n\n\n\n\n\nChoose “Upload an XLSForm”\n\n\n\n\n\n\n\nCreate the project from your XLSForm\n\n\n\n\n\nFill in the project details (name, description, sector: Health Services / Public Health, country: Nepal), then click Create project.\n\n\n\n\n\n\n\nProject details\n\n\nClick the eye icon (Preview) to test the form in your browser. Check the skip logic, constraints and language switch.\n\n\n\n\n\n\n\nPreview icon\n\n\nClick Deploy. This publishes your form so it can be used for data collection in the web form and in KoboCollect. Until a form is deployed, it cannot collect data, even if the upload worked.\n\n\n\n\n\n\n\nDeploying the form\n\n\nAfter deployment, the project appears under Deployed in the left-hand sidebar, with the number of deployed forms shown next to it. Forms that are uploaded but not yet deployed appear under Draft.\n\n\n\n\n\n\n\nDeployed forms in the left-hand sidebar\n\n\n\nTo upload a corrected version later, open the project’s Form tab and choose Replace form.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "6. Uploading XLSForm into KoboToolbox"
+    ]
+  },
+  {
+    "objectID": "06-kobo-upload.html#collect-test-data",
+    "href": "06-kobo-upload.html#collect-test-data",
+    "title": "Module 6: Uploading XLSForm into KoboToolbox",
+    "section": "Collect test data",
+    "text": "Collect test data\nTest your form yourself before sharing it with anyone.\n\nWeb form: in the Form tab, open the Collect data section, choose a web form option and click Open. Fill in the form in your browser.\n\nKoboCollect app (Android): see Module 7 for setup and use.\n\nSubmit 3 to 5 test records, including wrong values, to check your constraints.\nIn the Data tab, check that your test records appear and that each column is correct. See Module 9 for downloading the data.\n\n\n\n\n\n\n\nWarning\n\n\n\nDelete all test submissions before you start real data collection.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "6. Uploading XLSForm into KoboToolbox"
+    ]
+  },
+  {
+    "objectID": "06-kobo-upload.html#copying-the-link-to-share-for-self-administered-surveys",
+    "href": "06-kobo-upload.html#copying-the-link-to-share-for-self-administered-surveys",
+    "title": "Module 6: Uploading XLSForm into KoboToolbox",
+    "section": "Copying the link to share for self-administered surveys",
+    "text": "Copying the link to share for self-administered surveys\nIn a self-administered survey, respondents fill in the form themselves on their own phone or computer, without a data collector. You only need to share a web link, and each answer goes straight to your KoboToolbox project.\n\nOpen your deployed project and go to the Form tab.\nIn the Collect data section, open the drop-down list and choose a web form option:\n\nOnline-Only (single submission): each person submits once and then sees a thank-you page. Best for most self-administered surveys.\nOnline-Only (once per respondent): also stops the same browser from submitting twice.\nOnline-Offline (multiple submission): for data collectors entering several interviews on one device.\n\nClick Copy to copy the link.\n\n\n\n\n\n\n\nCopying the web form link\n\n\nShare the link by email, WhatsApp, Viber or Messenger, or turn it into a QR code for posters and handouts.\n\nBenefits: respondents don’t need an app or a KoboToolbox account, the form works on any phone, tablet or computer, and you can reach many people quickly without printing or data entry.\n\n\n\n\n\n\nImportantAllow submissions without login\n\n\n\nIf respondents are asked for a username and password when they open the link, go to your project’s Settings → Sharing and turn on Allow submissions to this form without a username and password.\n\n\n\n\n\n\n\n\nTip\n\n\n\nStart the form with a consent question, and test the link yourself on a phone before sharing it widely.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "6. Uploading XLSForm into KoboToolbox"
+    ]
+  },
+  {
+    "objectID": "06-kobo-upload.html#common-upload-errors",
+    "href": "06-kobo-upload.html#common-upload-errors",
+    "title": "Module 6: Uploading XLSForm into KoboToolbox",
+    "section": "Common upload errors",
+    "text": "Common upload errors\nIf KoboToolbox or XLSForm Online shows an error, this table helps you find the cause quickly.\n\n\n\n\n\n\n\n\nError message contains\nLikely cause\nFix\n\n\n\n\n“list name not in choices sheet”\nTypo between select_one xyz and list_name\nMake both names identical\n\n\n“unmatched begin statement”\nMissing end_group\nAdd end_group\n\n\n“duplicate name”\nTwo rows with the same name\nRename one\n\n\n“invalid name”\nSpace or symbol in name\nUse letters, numbers and _ only\n\n\nError in relevant / constraint\nMissing quotes, wrong ${name}\nCheck spelling and quotes",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "6. Uploading XLSForm into KoboToolbox"
+    ]
+  },
+  {
+    "objectID": "06-kobo-upload.html#ethics-and-data-protection",
+    "href": "06-kobo-upload.html#ethics-and-data-protection",
+    "title": "Module 6: Uploading XLSForm into KoboToolbox",
+    "section": "Ethics and data protection",
+    "text": "Ethics and data protection\n\nCollect only what your approved protocol needs. Avoid names and phone numbers unless required.\nShare projects with your supervisor through Settings → Sharing rather than sharing your password.\nDownload and store data on a password-protected device.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "6. Uploading XLSForm into KoboToolbox"
     ]
   },
   {
@@ -357,123 +542,6 @@
       "Home",
       "Modules",
       "2. Introduction to XLSForm"
-    ]
-  },
-  {
-    "objectID": "04-xlsform-development.html",
-    "href": "04-xlsform-development.html",
-    "title": "Module 4: XLSForm development with your research questions",
-    "section": "",
-    "text": "Now build your own form. Work from your approved thesis questionnaire.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "4. XLSForm development"
-    ]
-  },
-  {
-    "objectID": "04-xlsform-development.html#step-by-step",
-    "href": "04-xlsform-development.html#step-by-step",
-    "title": "Module 4: XLSForm development with your research questions",
-    "section": "Step-by-step",
-    "text": "Step-by-step\n\nCopy msn_xlsform_template.xlsx and rename it, e.g. lastname_survey_v1.xlsx. Keep the four metadata rows (start, end, today, deviceid) and replace the example rows with your own questions and answer options.\nSettings sheet: write your form title (e.g. Dinesh HTN Research).\nConsent first: add an introduction note and a required select_one yes_no consent question. Put the rest of the form in groups with relevant = ${consent} = 'yes'.\nOne group per section of your questionnaire (Section A, B, C …).\nFor each question, decide the type (use the Module 1 summary table), give it a short name, and copy the English label.\nAdd answer lists in choices. Reuse lists (e.g. one yes_no list for all yes/no questions).\nAdd rules: required, relevant for skip patterns, constraint for ranges.\nAdd Nepali labels in label::Nepali (ne) if you will interview in Nepali.\nSave and upload it in Module 6 to test.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "4. XLSForm development"
-    ]
-  },
-  {
-    "objectID": "04-xlsform-development.html#naming-conventions",
-    "href": "04-xlsform-development.html#naming-conventions",
-    "title": "Module 4: XLSForm development with your research questions",
-    "section": "Naming conventions",
-    "text": "Naming conventions\n\n\n\nGood name\nBad name\nWhy\n\n\n\n\nage\nAge of respondent\nNo spaces\n\n\nq12_knowledge\n12_knowledge\nMust start with a letter\n\n\nhb_level\nhb-level\nUse _, not -\n\n\nanc_visits\nx1\nShould be meaningful",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "4. XLSForm development"
-    ]
-  },
-  {
-    "objectID": "04-xlsform-development.html#checklist-before-upload",
-    "href": "04-xlsform-development.html#checklist-before-upload",
-    "title": "Module 4: XLSForm development with your research questions",
-    "section": "Checklist before upload",
-    "text": "Checklist before upload\n\nSheet names are exactly survey, choices, settings\nEvery name is unique with no spaces\nEvery select_one / select_multiple list exists in choices\nEvery begin_group has an end_group\nText values in relevant/constraint are in single quotes\nLanguage column names are spelled identically everywhere\nversion increased if you changed the form\n\n\n\n\n\n\n\nNoteAssignment\n\n\n\nSubmit your XLSForm (.xlsx) covering at least one full section of your thesis questionnaire, including at least one skip rule, one constraint, and (if applicable) a Likert scale.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "4. XLSForm development"
-    ]
-  },
-  {
-    "objectID": "08-formbuilder.html",
-    "href": "08-formbuilder.html",
-    "title": "Module 7: Developing survey questions in the Kobo Formbuilder",
-    "section": "",
-    "text": "KoboToolbox also has a point-and-click Formbuilder. It is useful for small forms and quick edits. XLSForm is better for long, bilingual thesis questionnaires, but it helps to know both.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "8. Kobo Formbuilder"
-    ]
-  },
-  {
-    "objectID": "08-formbuilder.html#build-a-form-from-scratch",
-    "href": "08-formbuilder.html#build-a-form-from-scratch",
-    "title": "Module 7: Developing survey questions in the Kobo Formbuilder",
-    "section": "Build a form from scratch",
-    "text": "Build a form from scratch\n\nNEW → Build from scratch → enter project details → Create project.\nClick + to add a question, type the question text, and choose the type (Select One, Select Many, Text, Number, Decimal, Date, Time, Note, Rating …).\nFor choice questions, type each option. Click + to add more options.\nClick the gear icon (Settings) on a question to set:\n\nMandatory response (required)\nSkip logic (relevant): choose the earlier question and condition\nValidation criteria (constraint) and the error message\nAppearance and hint\n\nSelect several questions and click Group to create a section.\nUse Manage translations to add Nepali labels.\nSave, Preview, then Deploy.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "8. Kobo Formbuilder"
-    ]
-  },
-  {
-    "objectID": "08-formbuilder.html#formbuilder-and-xlsform-together",
-    "href": "08-formbuilder.html#formbuilder-and-xlsform-together",
-    "title": "Module 7: Developing survey questions in the Kobo Formbuilder",
-    "section": "Formbuilder and XLSForm together",
-    "text": "Formbuilder and XLSForm together\n\nDownload any Formbuilder project as XLS (Form tab → ⋯ → Download XLS). This is a good way to learn XLSForm syntax: build a question in the Formbuilder, download, and see how it is written.\nYou can upload an XLSForm and then make small edits in the Formbuilder.\n\n\n\n\n\n\n\nNotePractice\n\n\n\nRebuild the Section C Likert scale from the example file in the Formbuilder using the Rating question type, then download it as XLS and compare it with the XLSForm version.",
-    "crumbs": [
-      "Home",
-      "Modules",
-      "8. Kobo Formbuilder"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Digital Data Collection with XLSForm and KoboToolbox",
-    "section": "",
-    "text": "Many research studies in Nepal still collect data on paper and enter it manually into Excel or SPSS afterwards. This course shows you how to replace that process with digital data collection: you design your questionnaire once in an Excel file (an XLSForm), upload it to KoboToolbox, and collect data on a phone, tablet or web browser. Data arrive clean, coded and ready for analysis.\nThis self-paced course covers basic to semi-advanced skills. You can work through every module on this website to practice together and build your own research questionnaire in XLSForm. You will then upload it to KoboToolbox to collect data.\n\n\n\n\n\n\nNoteWho is this course for?\n\n\n\nThis course is for students, beginner researchers, survey tool developers, and anyone who wants to move from paper questionnaires to digital data collection. The examples use health-related data. No programming knowledge is needed; basic computer and Excel skills are enough.\n\n\n\n\nBy the end of this course, you will be able to:\n\nChoose the correct question type (integer, decimal, single choice, multiple choice, date/time, text, note, etc.) for each research variable.\nExplain the sheets of an XLSForm (survey, choices, and settings) and create an XLSForm with a bilingual (English and Nepali) setup.\nConvert your own questionnaire into an XLSForm, including required questions, groups, skip logic, and constraints.\nCreate a KoboToolbox account, upload and deploy an XLSForm, and collect test data.\nBuild and edit a survey directly in the KoboToolbox Formbuilder.\nDownload the KoboCollect app on a mobile device, link it to your KoboToolbox account, and use it to collect data offline and submit it to the server.\nDownload collected data from the KoboToolbox server in Excel, CSV, or SPSS format for analysis.\n\n\n\n\n\nA laptop with Microsoft Excel, LibreOffice Calc or Google Sheets\nA smartphone with internet access\nThe KoboCollect app installed on an Android phone (see Module 7). iPhone users can use the web form instead.\nA KoboToolbox account (see Module 5)\nA copy of your research/thesis questionnaire (Word or PDF)\nDownload the course template: msn_xlsform_template.xlsx, an example template to start your own form",
-    "crumbs": [
-      "Home",
-      "About this course"
-    ]
-  },
-  {
-    "objectID": "index.html#learning-outcomes",
-    "href": "index.html#learning-outcomes",
-    "title": "Digital Data Collection with XLSForm and KoboToolbox",
-    "section": "",
-    "text": "By the end of this course, you will be able to:\n\nChoose the correct question type (integer, decimal, single choice, multiple choice, date/time, text, note, etc.) for each research variable.\nExplain the sheets of an XLSForm (survey, choices, and settings) and create an XLSForm with a bilingual (English and Nepali) setup.\nConvert your own questionnaire into an XLSForm, including required questions, groups, skip logic, and constraints.\nCreate a KoboToolbox account, upload and deploy an XLSForm, and collect test data.\nBuild and edit a survey directly in the KoboToolbox Formbuilder.\nDownload the KoboCollect app on a mobile device, link it to your KoboToolbox account, and use it to collect data offline and submit it to the server.\nDownload collected data from the KoboToolbox server in Excel, CSV, or SPSS format for analysis.",
-    "crumbs": [
-      "Home",
-      "About this course"
-    ]
-  },
-  {
-    "objectID": "index.html#before-you-start",
-    "href": "index.html#before-you-start",
-    "title": "Digital Data Collection with XLSForm and KoboToolbox",
-    "section": "",
-    "text": "A laptop with Microsoft Excel, LibreOffice Calc or Google Sheets\nA smartphone with internet access\nThe KoboCollect app installed on an Android phone (see Module 7). iPhone users can use the web form instead.\nA KoboToolbox account (see Module 5)\nA copy of your research/thesis questionnaire (Word or PDF)\nDownload the course template: msn_xlsform_template.xlsx, an example template to start your own form",
-    "crumbs": [
-      "Home",
-      "About this course"
     ]
   },
   {
@@ -585,25 +653,87 @@
     ]
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Resources",
+    "objectID": "09-download-data.html",
+    "href": "09-download-data.html",
+    "title": "Module 9: Downloading your data from KoboToolbox",
     "section": "",
-    "text": "KoboToolbox Help Center: https://support.kobotoolbox.org\nXLSForm reference: https://xlsform.org\nParticify: https://particify.de\nKoboToolbox community forum: https://community.kobotoolbox.org",
+    "text": "Once data collection has started, all submissions are stored on the KoboToolbox server. In this module you will view your data online and download it for analysis in Excel, SPSS, Stata or R.",
     "crumbs": [
       "Home",
-      "Resources"
+      "Modules",
+      "9. Downloading your data"
     ]
   },
   {
-    "objectID": "resources.html#course-files",
-    "href": "resources.html#course-files",
-    "title": "Resources",
-    "section": "Course files",
-    "text": "Course files\n\nXLSForm template with bilingual worked example\n\n\nThis course material is shared for educational use. Please cite the course page if you adapt it.",
+    "objectID": "09-download-data.html#step-1-view-your-data-online",
+    "href": "09-download-data.html#step-1-view-your-data-online",
+    "title": "Module 9: Downloading your data from KoboToolbox",
+    "section": "Step 1: View your data online",
+    "text": "Step 1: View your data online\n\nLog in to KoboToolbox and open your project.\nClick the Data tab. You will find:\n\n\n\n\n\n\n\n\nSection\nWhat it shows\n\n\n\n\nTable\nEvery submission as a row. Open, edit or validate individual records here.\n\n\nReports\nAutomatic frequency tables and charts for each question\n\n\nGallery\nPhotos collected with image questions\n\n\nDownloads\nExport your data as a file\n\n\nMap\nLocations collected with geopoint questions\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nCheck the Table regularly during data collection, not only at the end. Missing answers or strange values are much easier to correct while you are still in the field.",
     "crumbs": [
       "Home",
-      "Resources"
+      "Modules",
+      "9. Downloading your data"
+    ]
+  },
+  {
+    "objectID": "09-download-data.html#step-2-choose-the-export-settings",
+    "href": "09-download-data.html#step-2-choose-the-export-settings",
+    "title": "Module 9: Downloading your data from KoboToolbox",
+    "section": "Step 2: Choose the export settings",
+    "text": "Step 2: Choose the export settings\nClick Downloads in the Data tab and choose the settings.\nExport type\n\n\n\n\n\n\n\nExport type\nUse it for\n\n\n\n\nXLS\nExcel; the easiest choice for most users\n\n\nCSV\nR, Stata, Python or any statistics software\n\n\nSPSS Labels\nAdds variable and value labels in SPSS (see below)\n\n\nGeoJSON / KML\nGPS locations for mapping software\n\n\nMedia attachments (ZIP)\nPhotos, audio and other files collected with the form\n\n\n\nValue and header format\n\n\n\n\n\n\n\n\n\nOption\nColumn names\nAnswers\nExample\n\n\n\n\nLabels\nQuestion text\nAnswer text\nMarital status → Married\n\n\nXML values and headers\nQuestion name\nChoice name (codes)\nmarital → married\n\n\n\nFor analysis, XML values and headers is usually better: column names are short, and answers are the codes you defined in the choices sheet. Labels is useful for reading or sharing the data with people who don’t know the form.\nAdvanced options\nOpen Advanced options to fine-tune the export. The most useful settings:\n\nInclude groups in headers: adds the group name to each column (demographics/age). Untick it for shorter column names.\nSelect multiple responses: export as one column, as separate yes/no columns for each option, or both.\nInclude data from all versions: keep this ticked if you changed the form during data collection.\nSelect questions to be exported: export only the questions you need.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "9. Downloading your data"
+    ]
+  },
+  {
+    "objectID": "09-download-data.html#step-3-export-and-download",
+    "href": "09-download-data.html#step-3-export-and-download",
+    "title": "Module 9: Downloading your data from KoboToolbox",
+    "section": "Step 3: Export and download",
+    "text": "Step 3: Export and download\n\nClick Export.\nThe file appears in the list of exports below. Large projects can take a minute.\nClick the file name to download it.\n\nEach export is a snapshot of the data at that moment. To include new submissions, create a new export.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "9. Downloading your data"
+    ]
+  },
+  {
+    "objectID": "09-download-data.html#understanding-the-downloaded-file",
+    "href": "09-download-data.html#understanding-the-downloaded-file",
+    "title": "Module 9: Downloading your data from KoboToolbox",
+    "section": "Understanding the downloaded file",
+    "text": "Understanding the downloaded file\nWith XLS and XML values and headers, the file looks like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoday\nage\nsex\nmarital\nsymptoms\nsymptoms/fever\nsymptoms/cough\nbmi\n_id\n_submission_time\n\n\n\n\n2026-10-05\n45\nfemale\nmarried\nfever cough\n1\n1\n24.3\n101\n2026-10-05T10:12:30\n\n\n2026-10-05\n62\nmale\nwidowed\ncough\n0\n1\n27.8\n102\n2026-10-05T11:40:02\n\n\n\n\nselect_one answers appear as the choice name (married).\nselect_multiple answers appear as one column with all chosen options separated by spaces (fever cough), plus one yes/no column per option (1 = selected, 0 = not selected).\ncalculate results (such as bmi) appear as normal columns, ready for analysis.\nNotes are not exported, because they collect no answer.\nColumns starting with _ are added by KoboToolbox: _id (record number), _uuid (unique ID), _submission_time, _submitted_by, and _validation_status. Keep _id or _uuid to identify records; the others can usually be removed for analysis.\n\n\n\n\n\n\n\nNoteUsing SPSS\n\n\n\nThe SPSS Labels export does not contain the data itself. It downloads a syntax file (.sps) that adds variable and value labels.\n\nDownload the data as CSV or XLS with XML values and headers.\nOpen the data file in SPSS.\nDownload the SPSS Labels export, open the .sps file in SPSS, and run it.\n\nYour variables now show the question text and value labels, just as if you had entered them by hand.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "9. Downloading your data"
+    ]
+  },
+  {
+    "objectID": "09-download-data.html#good-practice-for-your-data",
+    "href": "09-download-data.html#good-practice-for-your-data",
+    "title": "Module 9: Downloading your data from KoboToolbox",
+    "section": "Good practice for your data",
+    "text": "Good practice for your data\n\nDownload a backup regularly during data collection, for example once a week.\nKeep the original download unchanged. Save a copy with a new name (e.g. data_clean_v1.xlsx) before cleaning or recoding.\nStore data on a password-protected computer, and don’t share files containing personal information by email or social media.\nShare the project, not your password: give your supervisor access through Settings → Sharing in your project.\nDelete test submissions before analysis, if you haven’t already.",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "9. Downloading your data"
+    ]
+  },
+  {
+    "objectID": "09-download-data.html#checklist",
+    "href": "09-download-data.html#checklist",
+    "title": "Module 9: Downloading your data from KoboToolbox",
+    "section": "Checklist",
+    "text": "Checklist\n\nOpened the Data → Table view and checked my submissions\nExported the data as XLS with XML values and headers\nDownloaded the file and opened it in Excel\nFound the columns for a select_multiple question and understood the 1/0 values\nSaved an unchanged copy of the original download",
+    "crumbs": [
+      "Home",
+      "Modules",
+      "9. Downloading your data"
     ]
   }
 ]

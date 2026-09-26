@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Resources – Kobo &amp; XLSForm Course</title>
+<title>Resources – From Paper to Digital</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./08-formbuilder.html" rel="prev">
+<link href="./09-download-data.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f1b8ffe018e27b3e49848c173bc17ec4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c08d3273e37e7f5e3c9409009cd7f4c7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,6 +75,43 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<style>
+  /* green: change these two values to recolour the whole site */
+  :root {
+    --course-color: #00883A;        /* green */
+    --course-color-light: #E6F3EB;  /* light green shade */
+  }
+
+  /* Page title and subtitle */
+  body .quarto-title .title,
+  body .quarto-title .subtitle {
+    color: var(--course-color);
+  }
+
+  /* All headings (#, ##, ###, ...) */
+  body h1, body h2, body h3,
+  body h4, body h5, body h6 {
+    color: var(--course-color);
+  }
+
+  /* Highlighted text: [text]{.highlight} */
+  .highlight {
+    color: var(--course-color);
+    font-weight: bold;
+  }
+
+  /* Note callouts: green border, light green header, green icon */
+  body div.callout-note.callout {
+    border-left-color: var(--course-color) !important;
+  }
+  body div.callout-note .callout-header,
+  body div.callout-note .callout-title {
+    background-color: var(--course-color-light) !important;
+  }
+  body div.callout-note .callout-icon::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300883A' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3E%3Cpath d='m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'/%3E%3C/svg%3E") !important;
+  }
+</style>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -88,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Kobo &amp; XLSForm Course</span>
+    <span class="navbar-title">From Paper to Digital</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -184,12 +221,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06-kobo-upload.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">6. Interface and uploading</span></a>
+ <span class="menu-text">6. Uploading XLSForm into KoboToolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-kobocollect.html" class="sidebar-item-text sidebar-link">
+  <a href="./07-kobocollect-mobile-app.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. KoboCollect mobile app</span></a>
   </div>
 </li>
@@ -197,6 +234,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./08-formbuilder.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">8. Kobo Formbuilder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-download-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Downloading your data</span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/dineshtgithub\.github\.io\/kobo-course\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -663,8 +706,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./08-formbuilder.html" class="pagination-link" aria-label="8. Kobo Formbuilder">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">8. Kobo Formbuilder</span>
+      <a href="./09-download-data.html" class="pagination-link" aria-label="9. Downloading your data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">9. Downloading your data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -677,7 +720,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Digital Data Collection with XLSForm and KoboToolbox</p>
+<p>From Paper to Digital: Survey Data Collection with KoboToolbox</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

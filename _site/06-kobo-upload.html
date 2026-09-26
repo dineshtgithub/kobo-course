@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 6: KoboToolbox interface and uploading your XLSForm – Kobo &amp; XLSForm Course</title>
+<title>Module 6: Uploading XLSForm into KoboToolbox – Kobo &amp; XLSForm Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,7 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./07-formbuilder.html" rel="next">
+<link href="./07-kobocollect.html" rel="next">
 <link href="./05-kobo-account.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -48,6 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-f1b8ffe018e27b3e49848c173bc17ec4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -190,8 +193,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-formbuilder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">7. Kobo Formbuilder</span></a>
+  <a href="./07-kobocollect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. KoboCollect mobile app</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-formbuilder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Kobo Formbuilder</span></a>
   </div>
 </li>
       </ul>
@@ -214,6 +223,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#upload-and-deploy-your-xlsform" id="toc-upload-and-deploy-your-xlsform" class="nav-link active" data-scroll-target="#upload-and-deploy-your-xlsform">Upload and deploy your XLSForm</a></li>
   <li><a href="#collect-test-data" id="toc-collect-test-data" class="nav-link" data-scroll-target="#collect-test-data">Collect test data</a></li>
+  <li><a href="#copying-the-link-to-share-for-self-administered-surveys" id="toc-copying-the-link-to-share-for-self-administered-surveys" class="nav-link" data-scroll-target="#copying-the-link-to-share-for-self-administered-surveys">Copying the link to share for self-administered surveys</a></li>
   <li><a href="#common-upload-errors" id="toc-common-upload-errors" class="nav-link" data-scroll-target="#common-upload-errors">Common upload errors</a></li>
   <li><a href="#ethics-and-data-protection" id="toc-ethics-and-data-protection" class="nav-link" data-scroll-target="#ethics-and-data-protection">Ethics and data protection</a></li>
   </ul>
@@ -224,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-question-types.html">Modules</a></li><li class="breadcrumb-item"><a href="./06-kobo-upload.html">6. Interface and uploading</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Module 6: KoboToolbox interface and uploading your XLSForm</h1>
+<h1 class="title">Module 6: Uploading XLSForm into KoboToolbox</h1>
 </div>
 
 
@@ -241,24 +251,109 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>In this module you will upload your XLSForm to KoboToolbox, deploy it, test it, and share it with respondents.</p>
 <section id="upload-and-deploy-your-xlsform" class="level2">
 <h2 class="anchored" data-anchor-id="upload-and-deploy-your-xlsform">Upload and deploy your XLSForm</h2>
 <ol type="1">
-<li>Click <strong>NEW</strong> → <strong>Upload an XLSForm</strong>.</li>
-<li>Choose your <code>.xlsx</code> file and click <strong>Upload</strong>. <img src="images/kobo2_upload_xls.png" class="img-fluid quarto-figure quarto-figure-center" style="width:70.0%" alt="Creating a KoboToolbox account"></li>
-<li>Fill in project details (name, description, sector: <em>Health</em>, country: <em>Nepal</em>) → <strong>Create project</strong>.</li>
-<li>If you see an error, read it carefully: it usually names the row and the problem (see the table below). Fix the Excel file and upload again via <strong>Replace form</strong>.</li>
-<li>Click the <strong>eye icon</strong> (Preview) to test the form in your browser. Check skip logic, constraints and the language switch.</li>
-<li>Click <strong>Deploy</strong>.</li>
+<li><p>Before uploading, check your form in <a href="https://getodk.org/xlsform/">XLSForm Online</a> and fix any errors it shows (see <a href="./03-question-features.html#testing-and-versions">Module 3</a>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/xlsform_preview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Checking the form in XLSForm Online"><img src="images/xlsform_preview.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Checking the form in XLSForm Online"></a></p>
+</figure>
+</div>
+<figcaption>Checking the form in XLSForm Online</figcaption>
+</figure>
+</div></li>
+<li><p>Log in to the KoboToolbox Global server at <a href="https://kf.kobotoolbox.org" class="uri">https://kf.kobotoolbox.org</a> with your username and password. If you don’t have an account yet, create one first (see <a href="./05-kobo-account.html">Module 5</a>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/login_page.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Log in page"><img src="images/login_page.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Log in page"></a></p>
+</figure>
+</div>
+<figcaption>Log in page</figcaption>
+</figure>
+</div></li>
+<li><p>Click <strong>NEW</strong> → <strong>Upload an XLSForm</strong> <img src="images/kobo-upload-icon.png" class="nolightbox" style="vertical-align: middle;;height:2.5em"></p></li>
+<li><p>Choose your <code>.xlsx</code> file and click <strong>Upload</strong>.</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/kobo2_upload_xls.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Choose “Upload an XLSForm”"><img src="images/kobo2_upload_xls.png" class="img-fluid figure-img" alt="Choose “Upload an XLSForm”"></a></p>
+<figcaption>Choose “Upload an XLSForm”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/Create_project_Upload_XLSForm.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Create the project from your XLSForm"><img src="images/Create_project_Upload_XLSForm.png" class="img-fluid figure-img" alt="Create the project from your XLSForm"></a></p>
+<figcaption>Create the project from your XLSForm</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div></li>
+<li><p>Fill in the project details (name, description, sector: <em>Health Services / Public Health</em>, country: <em>Nepal</em>), then click <strong>Create project</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/create_project.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Project details"><img src="images/create_project.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Project details"></a></p>
+</figure>
+</div>
+<figcaption>Project details</figcaption>
+</figure>
+</div></li>
+<li><p>Click the <strong>eye icon</strong> (Preview) to test the form in your browser. Check the skip logic, constraints and language switch.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/preview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Preview icon"><img src="images/preview.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Preview icon"></a></p>
+</figure>
+</div>
+<figcaption>Preview icon</figcaption>
+</figure>
+</div></li>
+<li><p>Click <strong>Deploy</strong>. This publishes your form so it can be used for data collection in the web form and in KoboCollect. Until a form is deployed, it cannot collect data, even if the upload worked.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/deploy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Deploying the form"><img src="images/deploy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Deploying the form"></a></p>
+</figure>
+</div>
+<figcaption>Deploying the form</figcaption>
+</figure>
+</div>
+<p>After deployment, the project appears under <strong>Deployed</strong> in the left-hand sidebar, with the number of deployed forms shown next to it. Forms that are uploaded but not yet deployed appear under <strong>Draft</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/deployed_leftside.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Deployed forms in the left-hand sidebar"><img src="images/deployed_leftside.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:40.0%" alt="Deployed forms in the left-hand sidebar"></a></p>
+</figure>
+</div>
+<figcaption>Deployed forms in the left-hand sidebar</figcaption>
+</figure>
+</div></li>
 </ol>
+<p>To upload a corrected version later, open the project’s <strong>Form</strong> tab and choose <strong>Replace form</strong>.</p>
 </section>
 <section id="collect-test-data" class="level2">
 <h2 class="anchored" data-anchor-id="collect-test-data">Collect test data</h2>
+<p>Test your form yourself before sharing it with anyone.</p>
 <ul>
-<li><strong>Web form:</strong> in the Form tab, open the <strong>Collect data</strong> section and choose the online-offline web form link. Open it on any browser or share it.</li>
-<li><strong>KoboCollect app (Android):</strong> install <em>KoboCollect</em> from the Play Store → configure the server with your server URL and username → <strong>Download form</strong> → <strong>Start new form</strong>. KoboCollect works <strong>offline</strong> in the field; send submissions when you are back online.</li>
+<li><strong>Web form:</strong> in the <strong>Form</strong> tab, open the <strong>Collect data</strong> section, choose a web form option and click <strong>Open</strong>. Fill in the form in your browser.</li>
+<li><strong>KoboCollect app (Android):</strong> see <a href="./07-kobocollect.html">Module 7</a> for setup and use.</li>
 <li>Submit <strong>3 to 5 test records</strong>, including wrong values, to check your constraints.</li>
-<li>In the <strong>Data</strong> tab, view the table and download the data as Excel. Check that each column is correct.</li>
+<li>In the <strong>Data</strong> tab, check that your test records appear and that each column is correct. See <a href="./09-download-data.html">Module 9</a> for downloading the data.</li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -274,8 +369,61 @@ Warning
 </div>
 </div>
 </section>
+<section id="copying-the-link-to-share-for-self-administered-surveys" class="level2">
+<h2 class="anchored" data-anchor-id="copying-the-link-to-share-for-self-administered-surveys">Copying the link to share for self-administered surveys</h2>
+<p>In a <strong>self-administered</strong> survey, respondents fill in the form themselves on their own phone or computer, without a data collector. You only need to share a web link, and each answer goes straight to your KoboToolbox project.</p>
+<ol type="1">
+<li><p>Open your deployed project and go to the <strong>Form</strong> tab.</p></li>
+<li><p>In the <strong>Collect data</strong> section, open the drop-down list and choose a web form option:</p>
+<ul>
+<li><strong>Online-Only (single submission):</strong> each person submits once and then sees a thank-you page. Best for most self-administered surveys.</li>
+<li><strong>Online-Only (once per respondent):</strong> also stops the same browser from submitting twice.</li>
+<li><strong>Online-Offline (multiple submission):</strong> for data collectors entering several interviews on one device.</li>
+</ul></li>
+<li><p>Click <strong>Copy</strong> to copy the link.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/copy_link.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Copying the web form link"><img src="images/copy_link.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="Copying the web form link"></a></p>
+</figure>
+</div>
+<figcaption>Copying the web form link</figcaption>
+</figure>
+</div></li>
+<li><p>Share the link by email, WhatsApp, Viber or Messenger, or turn it into a QR code for posters and handouts.</p></li>
+</ol>
+<p><strong>Benefits:</strong> respondents don’t need an app or a KoboToolbox account, the form works on any phone, tablet or computer, and you can reach many people quickly without printing or data entry.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Allow submissions without login
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If respondents are asked for a username and password when they open the link, go to your project’s <strong>Settings → Sharing</strong> and turn on <strong>Allow submissions to this form without a username and password</strong>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Start the form with a <strong>consent question</strong>, and test the link yourself on a phone before sharing it widely.</p>
+</div>
+</div>
+</section>
 <section id="common-upload-errors" class="level2">
 <h2 class="anchored" data-anchor-id="common-upload-errors">Common upload errors</h2>
+<p>If KoboToolbox or XLSForm Online shows an error, this table helps you find the cause quickly.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -737,8 +885,8 @@ Warning
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./07-formbuilder.html" class="pagination-link" aria-label="7. Kobo Formbuilder">
-        <span class="nav-page-text">7. Kobo Formbuilder</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07-kobocollect.html" class="pagination-link" aria-label="7. KoboCollect mobile app">
+        <span class="nav-page-text">7. KoboCollect mobile app</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -756,6 +904,38 @@ Warning
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

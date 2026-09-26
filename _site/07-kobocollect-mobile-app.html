@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 1: Types of survey questions – Kobo &amp; XLSForm Course</title>
+<title>Module 7: Collecting data with the KoboCollect mobile app – Kobo &amp; XLSForm Course</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,8 +36,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-xlsform-intro.html" rel="next">
-<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-question-types.html">Modules</a></li><li class="breadcrumb-item"><a href="./01-question-types.html">1. Types of survey questions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Module 7: Collecting data with the KoboCollect mobile app</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-question-types.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01-question-types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Types of survey questions</span></a>
   </div>
 </li>
@@ -190,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-kobocollect.html" class="sidebar-item-text sidebar-link">
+  <a href="./07-kobocollect.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7. KoboCollect mobile app</span></a>
   </div>
 </li>
@@ -218,25 +216,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#variables-and-question-types" id="toc-variables-and-question-types" class="nav-link active" data-scroll-target="#variables-and-question-types">Variables and question types</a></li>
-  <li><a href="#common-question-types-in-xlsform-kobotoolbox" id="toc-common-question-types-in-xlsform-kobotoolbox" class="nav-link" data-scroll-target="#common-question-types-in-xlsform-kobotoolbox">Common question types in XLSForm (KoboToolbox)</a></li>
-  <li><a href="#integer-whole-number" id="toc-integer-whole-number" class="nav-link" data-scroll-target="#integer-whole-number">Integer (whole number)</a></li>
-  <li><a href="#decimal" id="toc-decimal" class="nav-link" data-scroll-target="#decimal">Decimal</a></li>
-  <li><a href="#single-option-select-one" id="toc-single-option-select-one" class="nav-link" data-scroll-target="#single-option-select-one">Single option (select one)</a></li>
-  <li><a href="#multiple-option-select-multiple" id="toc-multiple-option-select-multiple" class="nav-link" data-scroll-target="#multiple-option-select-multiple">Multiple option (select multiple)</a></li>
-  <li><a href="#date-and-time" id="toc-date-and-time" class="nav-link" data-scroll-target="#date-and-time">Date and time</a></li>
-  <li><a href="#text" id="toc-text" class="nav-link" data-scroll-target="#text">Text</a></li>
-  <li><a href="#note" id="toc-note" class="nav-link" data-scroll-target="#note">Note</a></li>
-  <li><a href="#quiz-choose-the-question-type" id="toc-quiz-choose-the-question-type" class="nav-link" data-scroll-target="#quiz-choose-the-question-type">Quiz: choose the question type</a></li>
+  <li><a href="#step-1-install-kobocollect" id="toc-step-1-install-kobocollect" class="nav-link active" data-scroll-target="#step-1-install-kobocollect">Step 1: Install KoboCollect</a></li>
+  <li><a href="#step-2-connect-the-app-to-your-kobotoolbox-account" id="toc-step-2-connect-the-app-to-your-kobotoolbox-account" class="nav-link" data-scroll-target="#step-2-connect-the-app-to-your-kobotoolbox-account">Step 2: Connect the app to your KoboToolbox account</a></li>
+  <li><a href="#step-3-download-your-form-to-the-phone" id="toc-step-3-download-your-form-to-the-phone" class="nav-link" data-scroll-target="#step-3-download-your-form-to-the-phone">Step 3: Download your form to the phone</a></li>
+  <li><a href="#step-4-fill-in-the-form" id="toc-step-4-fill-in-the-form" class="nav-link" data-scroll-target="#step-4-fill-in-the-form">Step 4: Fill in the form</a></li>
+  <li><a href="#step-5-send-data-to-the-server" id="toc-step-5-send-data-to-the-server" class="nav-link" data-scroll-target="#step-5-send-data-to-the-server">Step 5: Send data to the server</a></li>
+  <li><a href="#step-6-update-the-form-after-changes" id="toc-step-6-update-the-form-after-changes" class="nav-link" data-scroll-target="#step-6-update-the-form-after-changes">Step 6: Update the form after changes</a></li>
+  <li><a href="#using-an-iphone" id="toc-using-an-iphone" class="nav-link" data-scroll-target="#using-an-iphone">Using an iPhone?</a></li>
+  <li><a href="#good-practice-in-the-field" id="toc-good-practice-in-the-field" class="nav-link" data-scroll-target="#good-practice-in-the-field">Good practice in the field</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-question-types.html">Modules</a></li><li class="breadcrumb-item"><a href="./01-question-types.html">1. Types of survey questions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Module 1: Types of survey questions</h1>
+<h1 class="title">Module 7: Collecting data with the KoboCollect mobile app</h1>
 </div>
 
 
@@ -253,494 +250,157 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Every variable in your research has a <strong>level of measurement</strong>. The question type you choose decides what kind of data you get and which statistics you can run later.</p>
-<section id="variables-and-question-types" class="level2">
-<h2 class="anchored" data-anchor-id="variables-and-question-types">Variables and question types</h2>
-<p>In research, a <strong>variable</strong> is any characteristic you measure or record for each participant, such as age, sex, or weight. Variables are divided into two main types:</p>
-<p><strong>Numerical variables</strong> are measured as numbers, and calculations such as mean or median.</p>
+<p><strong>KoboCollect</strong> is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works <strong>offline</strong>: you can interview participants in places without internet, and send the data to the server later.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Before you start
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li><em>Discrete</em>: whole numbers that are counted, such as age in years or number of children.</li>
-<li><em>Continuous</em>: measurements that can have decimals, such as blood sugar, height, haemoglobin, and most other biomarker values.</li>
+<li>An <strong>Android</strong> phone or tablet</li>
+<li>Your KoboToolbox <strong>username</strong> and <strong>password</strong> (Module 5)</li>
+<li>A <strong>deployed</strong> form in your KoboToolbox account (Module 6)</li>
+<li>Internet access for setup, downloading the form and sending data</li>
 </ul>
-<p><strong>Categorical variables</strong> place each participant into a group or category.</p>
-<ul>
-<li><em>Nominal</em>: categories with no natural order, such as sex, blood group, or hair color.</li>
-<li><em>Ordinal</em>: categories with a meaningful order, such as education level, pain severity, cancer stage, or a Likert scale.</li>
-</ul>
-<p>Dates, times and free-text answers are also collected in surveys. <strong>The table below shows which question type to use in KoboToolbox for each type of variable</strong>.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Variable type</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Examples</th>
-<th style="text-align: left;">Question type in KoboToolbox</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Numerical, discrete</strong></td>
-<td style="text-align: left;">Whole numbers (counts)</td>
-<td style="text-align: left;">Age in years, number of children</td>
-<td style="text-align: left;"><code>integer</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Numerical, continuous</strong></td>
-<td style="text-align: left;">Measurements with decimals</td>
-<td style="text-align: left;">Blood sugar, height, haemoglobin</td>
-<td style="text-align: left;"><code>decimal</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Categorical, nominal</strong></td>
-<td style="text-align: left;">Categories with no order</td>
-<td style="text-align: left;">Sex, blood group, type of cancer</td>
-<td style="text-align: left;"><code>select_one</code> / <code>select_multiple</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Categorical, ordinal</strong></td>
-<td style="text-align: left;">Categories with a meaningful order</td>
-<td style="text-align: left;">Education level, cancer stage, Likert scale</td>
-<td style="text-align: left;"><code>select_one</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Date and time</strong></td>
-<td style="text-align: left;">Calendar dates or clock times</td>
-<td style="text-align: left;">Date of admission, time of birth</td>
-<td style="text-align: left;"><code>date</code> / <code>time</code> / <code>datetime</code></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Text</strong></td>
-<td style="text-align: left;">Free, open-ended answers</td>
-<td style="text-align: left;">“Other, specify”, comments</td>
-<td style="text-align: left;"><code>text</code></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>None (information only)</strong></td>
-<td style="text-align: left;">Shows a message; no answer is collected</td>
-<td style="text-align: left;">Introduction, section instructions, thank-you message</td>
-<td style="text-align: left;"><code>note</code></td>
-</tr>
-</tbody>
-</table>
+</div>
+</div>
+<section id="step-1-install-kobocollect" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-install-kobocollect">Step 1: Install KoboCollect</h2>
+<ol type="1">
+<li>Open the <strong>Google Play Store</strong> on your Android phone.</li>
+<li>Search for <strong>KoboCollect</strong> and install the app published by <em>KoboToolbox</em>.</li>
+<li>Open the app.</li>
+</ol>
+<!-- ![KoboCollect in the Google Play Store](images/kobocollect-01-install.png){width=40% fig-align="center"} -->
 </section>
-<section id="common-question-types-in-xlsform-kobotoolbox" class="level2">
-<h2 class="anchored" data-anchor-id="common-question-types-in-xlsform-kobotoolbox">Common question types in XLSForm (KoboToolbox)</h2>
-<p>In an XLSForm, each question has a <strong>question type</strong>, written in the <code>type</code> column of the <code>survey</code> sheet. These are the question types most often used in research questionnaires:</p>
+<section id="step-2-connect-the-app-to-your-kobotoolbox-account" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-connect-the-app-to-your-kobotoolbox-account">Step 2: Connect the app to your KoboToolbox account</h2>
+<ol type="1">
+<li><p>When the app opens for the first time, choose <strong>Manually enter project details</strong>.</p></li>
+<li><p>Enter the server URL:</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Question type</th>
-<th style="text-align: left;">What it collects</th>
-<th style="text-align: left;">Example</th>
+<th style="text-align: left;">Your account is on</th>
+<th style="text-align: left;">Server URL for KoboCollect</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><code>integer</code></td>
-<td style="text-align: left;">Whole number</td>
-<td style="text-align: left;">Age in completed years</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>decimal</code></td>
-<td style="text-align: left;">Number with decimals</td>
-<td style="text-align: left;">Weight (kg)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>range</code></td>
-<td style="text-align: left;">Number chosen on a slider or scale</td>
-<td style="text-align: left;">Pain score 0–10</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>text</code></td>
-<td style="text-align: left;">Free text</td>
-<td style="text-align: left;">Other occupation</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>select_one list_name</code></td>
-<td style="text-align: left;">One option from a list</td>
-<td style="text-align: left;">Marital status</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>select_multiple list_name</code></td>
-<td style="text-align: left;">One or more options from a list</td>
-<td style="text-align: left;">Symptoms experienced</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>date</code></td>
-<td style="text-align: left;">Date</td>
-<td style="text-align: left;">Date of admission</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>time</code></td>
-<td style="text-align: left;">Time</td>
-<td style="text-align: left;">Time of medication</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>datetime</code></td>
-<td style="text-align: left;">Date and time</td>
-<td style="text-align: left;">Date and time of delivery</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>note</code></td>
-<td style="text-align: left;">Displays information, no answer collected</td>
-<td style="text-align: left;">Section instructions</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>acknowledge</code></td>
-<td style="text-align: left;">A single “OK” confirmation</td>
-<td style="text-align: left;">Consent statement read</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>geopoint</code></td>
-<td style="text-align: left;">GPS location</td>
-<td style="text-align: left;">Household location</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>image</code></td>
-<td style="text-align: left;">Photo</td>
-<td style="text-align: left;">Photo of a wound or document</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>audio</code></td>
-<td style="text-align: left;">Audio recording</td>
-<td style="text-align: left;">Recorded interview</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>barcode</code></td>
-<td style="text-align: left;">Scans a barcode or QR code</td>
-<td style="text-align: left;">Patient ID card</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>calculate</code></td>
-<td style="text-align: left;">Hidden calculation, not shown to respondent</td>
-<td style="text-align: left;">Total knowledge score</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>begin_group</code> / <code>end_group</code></td>
-<td style="text-align: left;">Groups questions into sections</td>
-<td style="text-align: left;">Section A: Demographics</td>
+<td style="text-align: left;">Global server (kf.kobotoolbox.org)</td>
+<td style="text-align: left;"><code>https://kc.kobotoolbox.org</code></td>
 </tr>
 </tbody>
-</table>
-<p>The rest of this module looks closely at the seven question types you will use most: integer, decimal, single option, multiple option, date and time, text, and note.</p>
+</table></li>
+<li><p>Enter your KoboToolbox <strong>username</strong> and <strong>password</strong>.</p></li>
+<li><p>Save the settings. The app’s main menu appears.</p></li>
+</ol>
+<!-- ![Entering the server details](images/kobocollect-02-server.png){width=40% fig-align="center"} -->
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The server URL for KoboCollect starts with <strong>kc</strong>, not <strong>kf</strong>. Using <code>kf.kobotoolbox.org</code> (the website address) is the most common setup mistake.</p>
+</div>
+</div>
+</section>
+<section id="step-3-download-your-form-to-the-phone" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-download-your-form-to-the-phone">Step 3: Download your form to the phone</h2>
+<ol type="1">
+<li>In the main menu, tap <strong>Download form</strong>.</li>
+<li>Tick the form you deployed in KoboToolbox.</li>
+<li>Tap <strong>Get selected</strong>.</li>
+</ol>
+<p>If your form doesn’t appear, check that it is <strong>deployed</strong> (not only uploaded) in KoboToolbox, and that you entered the correct username and server.</p>
+<!-- ![Downloading the form](images/kobocollect-03-download.png){width=40% fig-align="center"} -->
+</section>
+<section id="step-4-fill-in-the-form" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-fill-in-the-form">Step 4: Fill in the form</h2>
+<ol type="1">
+<li>Tap <strong>Start new form</strong> and choose your form.</li>
+<li>Answer each question, and swipe left or tap <strong>Next</strong> to move forward.</li>
+<li>To switch between English and Nepali, open the <strong>⋮ menu</strong> at the top right and choose <strong>Change language</strong>.</li>
+<li>At the end of the form, choose:
+<ul>
+<li><strong>Finalize</strong>: the record is complete and ready to send.</li>
+<li><strong>Save as draft</strong>: you can open it later from <strong>Drafts</strong> and finish it.</li>
+</ul></li>
+</ol>
+<!-- ![Filling in the form](images/kobocollect-04-fill.png){width=40% fig-align="center"} -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>More question types and advanced features
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>XLSForm supports many more question types and options, such as repeat groups, file uploads, and cascading selects. For the full list with examples, visit the <a href="https://xlsform.org/en/#question-types">XLSForm question types reference</a>.</p>
+<p>Filling in forms does <strong>not</strong> need internet. You can complete many interviews offline during the day and send them all at once.</p>
 </div>
 </div>
 </section>
-<section id="integer-whole-number" class="level2">
-<h2 class="anchored" data-anchor-id="integer-whole-number">Integer (whole number)</h2>
-<p>Used for counts and ages in completed years. No decimal point is allowed.</p>
-<blockquote class="blockquote">
-<p><strong>Poll:</strong> How many years have you worked as a nurse?</p>
-</blockquote>
+<section id="step-5-send-data-to-the-server" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-send-data-to-the-server">Step 5: Send data to the server</h2>
+<ol type="1">
+<li>When you have internet, tap <strong>Ready to send</strong> in the main menu.</li>
+<li>Select the records you want to send, or tap <strong>Select all</strong>.</li>
+<li>Tap <strong>Send selected</strong>.</li>
+<li>Sent records move to <strong>Sent</strong>. Check that they appear in the <strong>Data</strong> tab of your project in KoboToolbox.</li>
+</ol>
+<!-- ![Sending finalized forms](images/kobocollect-05-send.png){width=40% fig-align="center"} -->
+<p>To send records automatically whenever the phone is online, turn on <strong>Auto send</strong> in the app settings (under <em>Form management</em>).</p>
+</section>
+<section id="step-6-update-the-form-after-changes" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-update-the-form-after-changes">Step 6: Update the form after changes</h2>
+<p>If you change your XLSForm and redeploy it in KoboToolbox, the phone still has the old version.</p>
+<ol type="1">
+<li>Send all finalized records first.</li>
+<li>Tap <strong>Download form</strong> again and select the updated form.</li>
+<li>Start new interviews with the new version.</li>
+</ol>
+</section>
+<section id="using-an-iphone" class="level2">
+<h2 class="anchored" data-anchor-id="using-an-iphone">Using an iPhone?</h2>
+<p>KoboCollect is only available for Android. On an iPhone, iPad or computer, use the <strong>web form</strong> instead:</p>
+<ol type="1">
+<li>In KoboToolbox, open your project’s <strong>Form</strong> tab and find the <strong>Collect data</strong> section.</li>
+<li>Choose the <strong>online-offline</strong> web form option and copy the link.</li>
+<li>Open the link in the browser and add it to the <strong>home screen</strong>.</li>
+</ol>
+<p>The online-offline web form can also be filled in without internet once it has been opened, and it sends the data when the connection returns.</p>
+</section>
+<section id="good-practice-in-the-field" class="level2">
+<h2 class="anchored" data-anchor-id="good-practice-in-the-field">Good practice in the field</h2>
 <ul>
-<li>Examples: age in years, number of children, parity, number of hospital admissions, days of hospital stay.</li>
-<li>Analysis: mean, median, SD, t-test, correlation.</li>
+<li><strong>Test before the field:</strong> fill in and send 3 to 5 test records, then check them in KoboToolbox. Delete the test records before real data collection.</li>
+<li><strong>Send data every day</strong> when possible. Records on the phone can be lost if it is damaged, stolen or reset.</li>
+<li><strong>Never uninstall KoboCollect or clear its data</strong> while records are still waiting in <em>Drafts</em> or <em>Ready to send</em>.</li>
+<li><strong>Protect the phone</strong> with a screen lock, since it contains participants’ data.</li>
+<li>Carry a <strong>charger or power bank</strong>; long field days drain the battery.</li>
 </ul>
 </section>
-<section id="decimal" class="level2">
-<h2 class="anchored" data-anchor-id="decimal">Decimal</h2>
-<p>Used for measurements that need a fractional part.</p>
-<blockquote class="blockquote">
-<p><strong>Poll:</strong> What is your height in metres? (e.g.&nbsp;1.62)</p>
-</blockquote>
-<ul>
-<li>Examples: weight (kg), height (m), haemoglobin (g/dL), body temperature (°C), BMI.</li>
-<li>Tip: always write the <strong>unit</strong> in the question.</li>
+<section id="checklist" class="level2">
+<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">KoboCollect installed on an Android phone</label></li>
+<li><label><input type="checkbox">App connected to the correct server (<code>kc…</code>) with my username</label></li>
+<li><label><input type="checkbox">My form downloaded to the phone</label></li>
+<li><label><input type="checkbox">At least one test record filled in, including a language switch</label></li>
+<li><label><input type="checkbox">Test record sent and visible in the KoboToolbox <strong>Data</strong> tab</label></li>
 </ul>
-</section>
-<section id="single-option-select-one" class="level2">
-<h2 class="anchored" data-anchor-id="single-option-select-one">Single option (select one)</h2>
-<p>The respondent can choose <strong>only one</strong> answer from a list.</p>
-<blockquote class="blockquote">
-<p><strong>Poll:</strong> In which inpatient department do you currently work? ☐ Medical ☐ Surgical ☐ Paediatric ☐ Maternity ☐ Critical care</p>
-</blockquote>
-<ul>
-<li>Examples: sex, marital status, education level, yes/no questions.</li>
-<li>Categories must not overlap, and must cover every possible answer (add “Other” if needed).</li>
-</ul>
-</section>
-<section id="multiple-option-select-multiple" class="level2">
-<h2 class="anchored" data-anchor-id="multiple-option-select-multiple">Multiple option (select multiple)</h2>
-<p>The respondent can choose <strong>one or more</strong> answers.</p>
-<blockquote class="blockquote">
-<p><strong>Poll:</strong> Which sources do you use to learn about research methods? (select all that apply) ☐ Textbooks ☐ Journals ☐ YouTube ☐ Teachers ☐ AI tools</p>
-</blockquote>
-<ul>
-<li>Examples: symptoms experienced, sources of health information, comorbidities.</li>
-<li>In the data, each option becomes its own yes/no.</li>
-</ul>
-</section>
-<section id="date-and-time" class="level2">
-<h2 class="anchored" data-anchor-id="date-and-time">Date and time</h2>
-<blockquote class="blockquote">
-<p><strong>Poll:</strong> On what date did you join the M.Sc. Nursing programme?<br>
-<strong>Poll:</strong> At what time does your morning duty usually start?</p>
-</blockquote>
-<ul>
-<li><code>date</code>: date of admission, date of delivery, last menstrual period.</li>
-<li><code>time</code>: time of medication, time of birth.</li>
-<li><code>datetime</code>: exact date <strong>and</strong> time of an event.</li>
-<li>Digital forms use a date picker, so there are no confusing formats like 05/06/2026.</li>
-</ul>
-</section>
-<section id="text" class="level2">
-<h2 class="anchored" data-anchor-id="text">Text</h2>
-<p>Free, open-ended answers.</p>
-<blockquote class="blockquote">
-<p><strong>Poll:</strong> In one word, what is the biggest challenge in collecting thesis data?</p>
-</blockquote>
-<ul>
-<li>Examples: “Other (please specify)”, suggestions, comments, qualitative answers.</li>
-<li>Use text questions only when needed. They take longer to answer and are harder to analyse.</li>
-</ul>
-</section>
-<section id="note" class="level2">
-<h2 class="anchored" data-anchor-id="note">Note</h2>
-<p>A note shows information to the respondent or data collector but <strong>collects no answer</strong>.</p>
-<blockquote class="blockquote">
-<p>Example: <em>“This survey has 25 questions and takes about 10 minutes to complete. Your answers will be kept confidential.”</em></p>
-</blockquote>
-<ul>
-<li>Use notes for introductions, section instructions, and thank-you messages.</li>
-</ul>
-</section>
-<section id="quiz-choose-the-question-type" class="level2">
-<h2 class="anchored" data-anchor-id="quiz-choose-the-question-type">Quiz: choose the question type</h2>
-<p>For each question, click the XLSForm question type you would use. Then press <strong>Check answers</strong>.</p>
-<div id="qt-quiz"></div>
-
-<style>
-  #qt-quiz fieldset {
-    border: 1px solid #dee2e6;
-    border-left: 4px solid var(--course-color, #2780e3);
-    border-radius: 6px;
-    padding: 0.8rem 1rem;
-    margin-bottom: 1rem;
-  }
-  #qt-quiz legend {
-    font-size: 1rem;
-    font-weight: 600;
-    float: none;
-    width: auto;
-    padding: 0 0.3rem;
-    margin-bottom: 0.3rem;
-  }
-  #qt-quiz label {
-    display: block;
-    padding: 0.25rem 0.4rem;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  #qt-quiz label:hover { background: #f1f6fd; }
-  #qt-quiz input { margin-right: 0.5rem; }
-  #qt-quiz code { font-size: 0.95rem; }
-  #qt-quiz .qt-right { background: #e6f4ea; border-left-color: #1e7b4f; }
-  #qt-quiz .qt-wrong { background: #fdecea; border-left-color: #c0392b; }
-  #qt-quiz .qt-feedback { margin-top: 0.4rem; font-size: 0.95rem; }
-  #qt-quiz .qt-buttons button {
-    background: var(--course-color, #2780e3);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1.2rem;
-    margin-right: 0.5rem;
-    cursor: pointer;
-  }
-  #qt-quiz .qt-score {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin: 1rem 0;
-    color: var(--course-color, #2780e3);
-  }
-</style>
-
-<script>
-(function () {
-  const questions = [
-    { q: "How many times have you been admitted to hospital in the past year?",
-      options: ["integer", "decimal", "text", "select_one"], answer: 0,
-      why: "It is a count, so a whole number." },
-    { q: "What is your haemoglobin level (g/dL)?",
-      options: ["integer", "decimal", "text", "note"], answer: 1,
-      why: "It is a measurement that needs decimals." },
-    { q: "What is your marital status?",
-      options: ["select_multiple", "text", "select_one", "integer"], answer: 2,
-      why: "Only one status applies to each person." },
-    { q: "Which symptoms have you had in the last 7 days? (select all that apply)",
-      options: ["select_one", "select_multiple", "text", "note"], answer: 1,
-      why: "More than one symptom can be chosen." },
-    { q: "On what date were you admitted to this hospital?",
-      options: ["time", "datetime", "date", "text"], answer: 2,
-      why: "Only a calendar date is needed." },
-    { q: "At what time do you usually take your medicine?",
-      options: ["date", "time", "integer", "datetime"], answer: 1,
-      why: "Only a clock time is needed." },
-    { q: "What was the exact date and time of delivery?",
-      options: ["date", "time", "datetime", "text"], answer: 2,
-      why: "Both the date and the time are needed." },
-    { q: "If your occupation is \"Other\", please specify.",
-      options: ["select_one", "note", "text", "select_multiple"], answer: 2,
-      why: "It is a free, open-ended answer." },
-    { q: "\"Section B: The next questions are about your daily activities. Please       answer honestly.\"",
-      options: ["text", "note", "select_one", "integer"], answer: 1,
-      why: "It only shows instructions; no answer is collected." },
-    { q: "How satisfied are you with nursing care? (Very dissatisfied to Very satisfied)",
-      options: ["select_multiple", "integer", "text", "select_one"], answer: 3,
-      why: "It is an ordered scale (Likert) where one option is chosen." }
-  ];
-
-  const box = document.getElementById("qt-quiz");
-
-  function render() {
-    let html = "";
-    questions.forEach((item, i) => {
-      html += `<fieldset id="qt-q${i}"><legend>${i + 1}. ${item.q}</legend>`;
-      item.options.forEach((opt, j) => {
-        html += `<label><input type="radio" name="qt${i}" value="${j}"><code>${opt}</code></label>`;
-      });
-      html += `<div class="qt-feedback"></div></fieldset>`;
-    });
-    html += `<div class="qt-score"></div>
-             <div class="qt-buttons">
-               <button type="button" id="qt-check">Check answers</button>
-               <button type="button" id="qt-reset" style="display:none">Try again</button>
-             </div>`;
-    box.innerHTML = html;
-    document.getElementById("qt-check").onclick = check;
-    document.getElementById("qt-reset").onclick = render;
-  }
-
-  function check() {
-    let score = 0;
-    questions.forEach((item, i) => {
-      const fs = document.getElementById(`qt-q${i}`);
-      const chosen = fs.querySelector("input:checked");
-      const feedback = fs.querySelector(".qt-feedback");
-      const correct = `<code>${item.options[item.answer]}</code>`;
-      fs.querySelectorAll("input").forEach(inp => inp.disabled = true);
-
-      if (chosen && Number(chosen.value) === item.answer) {
-        score++;
-        fs.classList.add("qt-right");
-        feedback.innerHTML = `✅ Correct: ${correct}. ${item.why}`;
-      } else {
-        fs.classList.add("qt-wrong");
-        const yours = chosen ? "" : "Not answered. ";
-        feedback.innerHTML = `❌ ${yours}Correct answer: ${correct}. ${item.why}`;
-      }
-    });
-    box.querySelector(".qt-score").textContent =
-      `Your score: ${score} out of ${questions.length}`;
-    document.getElementById("qt-check").style.display = "none";
-    document.getElementById("qt-reset").style.display = "inline-block";
-  }
-
-  render();
-})();
-</script>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Answers (click to show)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">No.</th>
-<th style="text-align: left;">Answer</th>
-<th style="text-align: left;">Why</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"><code>integer</code></td>
-<td style="text-align: left;">A count, so a whole number</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;"><code>decimal</code></td>
-<td style="text-align: left;">A measurement with decimals</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3</td>
-<td style="text-align: left;"><code>select_one</code></td>
-<td style="text-align: left;">Only one status applies</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">4</td>
-<td style="text-align: left;"><code>select_multiple</code></td>
-<td style="text-align: left;">More than one symptom can be chosen</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">5</td>
-<td style="text-align: left;"><code>date</code></td>
-<td style="text-align: left;">A calendar date</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">6</td>
-<td style="text-align: left;"><code>time</code></td>
-<td style="text-align: left;">A clock time</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">7</td>
-<td style="text-align: left;"><code>datetime</code></td>
-<td style="text-align: left;">Both date and time are needed</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8</td>
-<td style="text-align: left;"><code>text</code></td>
-<td style="text-align: left;">A free, open-ended answer</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">9</td>
-<td style="text-align: left;"><code>note</code></td>
-<td style="text-align: left;">Information only; no answer is collected</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;"><code>select_one</code></td>
-<td style="text-align: left;">An ordered scale where one option is chosen (Likert)</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 
 
 </section>
@@ -1146,18 +806,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="About this course">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About this course</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./02-xlsform-intro.html" class="pagination-link" aria-label="2. Introduction to XLSForm">
-        <span class="nav-page-text">2. Introduction to XLSForm</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

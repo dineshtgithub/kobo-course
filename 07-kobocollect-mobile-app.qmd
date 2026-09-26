@@ -2,7 +2,7 @@
 title: "Module 7: Collecting data with the KoboCollect mobile app"
 ---
 
-**KoboCollect** is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works **offline**: you can interview participants in places without internet, and send the data to the server later.
+**KoboCollect** ![](images/kobocollect-logo.png){height=1.5em .nolightbox style="vertical-align: middle;"} is a free Android app for collecting data with your KoboToolbox forms. Its biggest advantage is that it works **offline**: you can interview participants in places without internet, and send the data to the server later.
 
 ::: {.callout-note}
 ## Before you start
@@ -22,37 +22,61 @@ title: "Module 7: Collecting data with the KoboCollect mobile app"
 
 ## Step 2: Connect the app to your KoboToolbox account
 
-1. When the app opens for the first time, choose **Manually enter project details**.
-2. Enter the server URL:
+1. On your computer, log in to KoboToolbox and open your deployed project.
+2. In the **Form** tab, open the **Collect data** drop-down list, scroll down to the end, and choose **Android application**.
 
-   | Your account is on | Server URL for KoboCollect |
-   |:--|:--|
-   | Global server (kf.kobotoolbox.org) | `https://kc.kobotoolbox.org` |
+   ![Choosing "Android application" in the Form tab](images/android_application.png){width=70% fig-align="center"}
 
-3. Enter your KoboToolbox **username** and **password**.
-4. Save the settings. The app's main menu appears.
+3. The instructions that appear show the **KoboCollect URL**. Note it down. For the Global server it is `https://kc.kobotoolbox.org`.
 
-<!-- ![Entering the server details](images/kobocollect-02-server.png){width=40% fig-align="center"} -->
+   ![The KoboCollect URL in the instructions](images/kobocollect-url-web.png){width=70% fig-align="center"}
+
+4. On your phone, open KoboCollect and choose **Manually enter project details**.
+
+   ![Choosing "Manually enter project details" in KoboCollect](images/manual_enter_project.jpeg){width=40% fig-align="center"}
+
+5. On the **Add project** screen, fill in the three fields:
+
+   ![The Add project screen in KoboCollect](images/add_project.jpeg){width=40% fig-align="center"}
+
+   - **URL:** enter `https://kc.kobotoolbox.org`. It may already be filled in. The address starts with **kc** (the data collection server), not **kf** (the website you log in to on your computer). KoboCollect only works with the **kc** address.
+   - **Username:** your KoboToolbox username, the same one you use on the website. Type it in lowercase, without spaces.
+   - **Password:** your KoboToolbox password.
+
+   Then tap **Add**. The app connects to your account and the main menu appears.
 
 ::: {.callout-warning}
+## Server address: kc, not kf
 The server URL for KoboCollect starts with **kc**, not **kf**. Using `kf.kobotoolbox.org` (the website address) is the most common setup mistake.
 :::
 
 ## Step 3: Download your form to the phone
 
 1. In the main menu, tap **Download form**.
+
+   ![The main menu with the Download form button](images/download_form.jpeg){width=40% fig-align="center"}
+
 2. Tick the form you deployed in KoboToolbox.
-3. Tap **Get selected**.
+
+   ![Ticking and selecting the deployed form](images/get_selected.jpeg){width=40% fig-align="center"}
+
+3. Tap **Get selected** at the bottom right of the screen.
+
+   ![Ticking and selecting the deployed form](images/get_selected.jpeg){width=40% fig-align="center"}
 
 If your form doesn't appear, check that it is **deployed** (not only uploaded) in KoboToolbox, and that you entered the correct username and server.
-
-<!-- ![Downloading the form](images/kobocollect-03-download.png){width=40% fig-align="center"} -->
 
 ## Step 4: Fill in the form
 
 1. Tap **Start new form** and choose your form.
+
+   ![Start new form](images/new_form.jpeg){width=40% fig-align="center"}
+
 2. Answer each question, and swipe left or tap **Next** to move forward.
-3. To switch between English and Nepali, open the **⋮ menu** at the top right and choose **Change language**.
+3. To switch between English and Nepali, tap the **⋮ menu** at the top right and choose **Change language**.
+
+   ![Language setting](images/language_setting.jpeg){width=40% fig-align="center"}
+
 4. At the end of the form, choose:
    - **Finalize**: the record is complete and ready to send.
    - **Save as draft**: you can open it later from **Drafts** and finish it.
@@ -82,6 +106,14 @@ If you change your XLSForm and redeploy it in KoboToolbox, the phone still has t
 2. Tap **Download form** again and select the updated form.
 3. Start new interviews with the new version.
 
+## Working with more than one project
+
+KoboCollect can connect to several KoboToolbox accounts and projects, even on different servers, and switch between them.
+
+1. Tap the **Project icon** at the top right of the main menu.
+2. Tap **Add project**, and set it up as in Step 2.
+3. To switch projects, tap the Project icon and choose the project. The active project is listed first.
+
 ## Using an iPhone?
 
 KoboCollect is only available for Android. On an iPhone, iPad or computer, use the **web form** instead:
@@ -103,7 +135,7 @@ The online-offline web form can also be filled in without internet once it has b
 ## Checklist
 
 - [ ] KoboCollect installed on an Android phone
-- [ ] App connected to the correct server (`kc…`) with my username
+- [ ] App connected to my account with the `kc…` server URL
 - [ ] My form downloaded to the phone
 - [ ] At least one test record filled in, including a language switch
 - [ ] Test record sent and visible in the KoboToolbox **Data** tab

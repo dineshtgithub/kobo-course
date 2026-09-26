@@ -1,10 +1,11 @@
 project:
   type: website
+  output-dir: docs
   resources:
     - templates/
 
 website:
-  title: "Kobo & XLSForm Course"
+  title: "From Paper to Digital"
   page-navigation: true          # adds "Previous / Next" buttons at the bottom of every page
   search: true
   navbar:
@@ -32,15 +33,17 @@ website:
           - href: 05-kobo-account.qmd
             text: "5. KoboToolbox account (homework)"
           - href: 06-kobo-upload.qmd
-            text: "6. Interface and uploading"
-          - href: 07-kobocollect.qmd
+            text: "6. Uploading XLSForm into KoboToolbox"
+          - href: 07-kobocollect-mobile-app.qmd
             text: "7. KoboCollect mobile app"
           - href: 08-formbuilder.qmd
             text: "8. Kobo Formbuilder"
+          - href: 09-download-data.qmd
+            text: "9. Downloading your data"
       - href: resources.qmd
         text: "Resources"
   page-footer:
-    center: "Digital Data Collection with XLSForm and KoboToolbox"
+    center: "From Paper to Digital: Survey Data Collection with KoboToolbox"
 
 format:
   html:
@@ -52,3 +55,42 @@ format:
     toc-depth: 3
     code-copy: true
     smooth-scroll: true
+    include-in-header:
+      text: |
+        <style>
+          /* green: change these two values to recolour the whole site */
+          :root {
+            --course-color: #00883A;        /* green */
+            --course-color-light: #E6F3EB;  /* light green shade */
+          }
+
+          /* Page title and subtitle */
+          body .quarto-title .title,
+          body .quarto-title .subtitle {
+            color: var(--course-color);
+          }
+
+          /* All headings (#, ##, ###, ...) */
+          body h1, body h2, body h3,
+          body h4, body h5, body h6 {
+            color: var(--course-color);
+          }
+
+          /* Highlighted text: [text]{.highlight} */
+          .highlight {
+            color: var(--course-color);
+            font-weight: bold;
+          }
+
+          /* Note callouts: green border, light green header, green icon */
+          body div.callout-note.callout {
+            border-left-color: var(--course-color) !important;
+          }
+          body div.callout-note .callout-header,
+          body div.callout-note .callout-title {
+            background-color: var(--course-color-light) !important;
+          }
+          body div.callout-note .callout-icon::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2300883A' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3E%3Cpath d='m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'/%3E%3C/svg%3E") !important;
+          }
+        </style>

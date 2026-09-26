@@ -1,0 +1,114 @@
+---
+title: "Module 9: Downloading your data from KoboToolbox"
+---
+
+Once data collection has started, all submissions are stored on the KoboToolbox server. In this module you will view your data online and download it for analysis in Excel, SPSS, Stata or R.
+
+::: {.callout-note}
+## Before you start
+- A **deployed** form with at least a few submissions (Modules 6 and 7)
+- Your KoboToolbox username and password
+:::
+
+## Step 1: View your data online
+
+1. Log in to KoboToolbox and open your project.
+2. Click the **Data** tab. You will find:
+
+| Section | What it shows |
+|:--|:--|
+| **Table** | Every submission as a row. Open, edit or validate individual records here. |
+| **Reports** | Automatic frequency tables and charts for each question |
+| **Gallery** | Photos collected with `image` questions |
+| **Downloads** | Export your data as a file |
+| **Map** | Locations collected with `geopoint` questions |
+
+<!-- ![The Data tab](images/kobo-08-data.png){width=85% fig-align="center"} -->
+
+::: {.callout-tip}
+Check the **Table** regularly during data collection, not only at the end. Missing answers or strange values are much easier to correct while you are still in the field.
+:::
+
+## Step 2: Choose the export settings
+
+Click **Downloads** in the Data tab and choose the settings.
+
+**Export type**
+
+| Export type | Use it for |
+|:--|:--|
+| **XLS** | Excel; the easiest choice for most users |
+| **CSV** | R, Stata, Python or any statistics software |
+| **SPSS Labels** | Adds variable and value labels in SPSS (see below) |
+| **GeoJSON / KML** | GPS locations for mapping software |
+| **Media attachments (ZIP)** | Photos, audio and other files collected with the form |
+
+**Value and header format**
+
+| Option | Column names | Answers | Example |
+|:--|:--|:--|:--|
+| **Labels** | Question text | Answer text | *Marital status* → *Married* |
+| **XML values and headers** | Question `name` | Choice `name` (codes) | `marital` → `married` |
+
+For analysis, **XML values and headers** is usually better: column names are short, and answers are the codes you defined in the `choices` sheet. *Labels* is useful for reading or sharing the data with people who don't know the form.
+
+**Advanced options**
+
+Open *Advanced options* to fine-tune the export. The most useful settings:
+
+- **Include groups in headers:** adds the group name to each column (`demographics/age`). Untick it for shorter column names.
+- **Select multiple responses:** export as one column, as separate yes/no columns for each option, or both.
+- **Include data from all versions:** keep this ticked if you changed the form during data collection.
+- **Select questions to be exported:** export only the questions you need.
+
+<!-- ![Export settings](images/kobo-09-downloads.png){width=85% fig-align="center"} -->
+
+## Step 3: Export and download
+
+1. Click **Export**.
+2. The file appears in the list of exports below. Large projects can take a minute.
+3. Click the file name to download it.
+
+Each export is a snapshot of the data **at that moment**. To include new submissions, create a new export.
+
+## Understanding the downloaded file
+
+With **XLS** and **XML values and headers**, the file looks like this:
+
+| today | age | sex | marital | symptoms | symptoms/fever | symptoms/cough | bmi | _id | _submission_time |
+|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
+| 2026-10-05 | 45 | female | married | fever cough | 1 | 1 | 24.3 | 101 | 2026-10-05T10:12:30 |
+| 2026-10-05 | 62 | male | widowed | cough | 0 | 1 | 27.8 | 102 | 2026-10-05T11:40:02 |
+
+- **`select_one`** answers appear as the choice name (`married`).
+- **`select_multiple`** answers appear as one column with all chosen options separated by spaces (`fever cough`), plus one yes/no column per option (1 = selected, 0 = not selected).
+- **`calculate`** results (such as `bmi`) appear as normal columns, ready for analysis.
+- **Notes** are not exported, because they collect no answer.
+- Columns starting with **`_`** are added by KoboToolbox: `_id` (record number), `_uuid` (unique ID), `_submission_time`, `_submitted_by`, and `_validation_status`. Keep `_id` or `_uuid` to identify records; the others can usually be removed for analysis.
+
+::: {.callout-note}
+## Using SPSS
+The **SPSS Labels** export does not contain the data itself. It downloads a syntax file (`.sps`) that adds variable and value labels.
+
+1. Download the data as **CSV** or **XLS** with **XML values and headers**.
+2. Open the data file in SPSS.
+3. Download the **SPSS Labels** export, open the `.sps` file in SPSS, and run it.
+
+Your variables now show the question text and value labels, just as if you had entered them by hand.
+:::
+
+## Good practice for your data
+
+- **Download a backup regularly** during data collection, for example once a week.
+- **Keep the original download unchanged.** Save a copy with a new name (e.g. `data_clean_v1.xlsx`) before cleaning or recoding.
+- **Store data on a password-protected computer**, and don't share files containing personal information by email or social media.
+- **Share the project, not your password:** give your supervisor access through **Settings → Sharing** in your project.
+- **Delete test submissions** before analysis, if you haven't already.
+
+## Checklist
+
+- [ ] Opened the **Data → Table** view and checked my submissions
+- [ ] Exported the data as **XLS** with **XML values and headers**
+- [ ] Downloaded the file and opened it in Excel
+- [ ] Found the columns for a `select_multiple` question and understood the 1/0 values
+- [ ] Saved an unchanged copy of the original download
